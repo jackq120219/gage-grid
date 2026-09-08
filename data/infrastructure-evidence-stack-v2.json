@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "purpose": "Second-layer infrastructure evidence registry for parcel diligence. Presence or proximity never constitutes serviceability, available headroom, pressure, treatment capacity, route diversity, or delivery timing.",
+  "systems": {
+    "power": [
+      {"name":"EIA Form 861 utility data","authority":"U.S. Energy Information Administration","url":"https://www.eia.gov/electricity/data/eia861/","use":"Utility identity, service context, sales, customers and reliability context."},
+      {"name":"EIA Form 860 generator data","authority":"U.S. Energy Information Administration","url":"https://www.eia.gov/electricity/data/eia860/","use":"Generation assets and planned generator context; not distribution or substation headroom."},
+      {"name":"State utility commission filings","authority":"ICC / IURC","url":"https://www.icc.illinois.gov/","use":"Rate cases, grid plans, reliability filings and utility infrastructure proceedings."}
+    ],
+    "water": [
+      {"name":"USGS Water Data for the Nation","authority":"U.S. Geological Survey","url":"https://waterdata.usgs.gov/nwis","use":"Observed stream, groundwater and hydrologic context."},
+      {"name":"EPA SDWIS / Drinking Water Search","authority":"U.S. Environmental Protection Agency","url":"https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard","use":"Public water-system identity, service-area and regulatory context; federal data may lag state records."}
+    ],
+    "wastewater": [
+      {"name":"EPA ICIS-NPDES discharge data","authority":"U.S. Environmental Protection Agency","url":"https://echo.epa.gov/tools/data-downloads/icis-npdes-discharge-points-download-summary","use":"Permits, outfalls, facility coordinates and reported design-flow fields where available."},
+      {"name":"EPA ECHO facility search","authority":"U.S. Environmental Protection Agency","url":"https://echo.epa.gov/","use":"Wastewater permit, compliance and regulated-facility evidence."}
+    ],
+    "gas": [
+      {"name":"National Pipeline Mapping System","authority":"PHMSA","url":"https://www.npms.phmsa.dot.gov/","use":"Transmission-pipeline corridor context; no assumption of tap availability or pressure."},
+      {"name":"PHMSA pipeline data and statistics","authority":"PHMSA","url":"https://www.phmsa.dot.gov/data-and-statistics/pipeline/data-and-statistics-overview","use":"Operator, system and safety context for gas transmission infrastructure."}
+    ],
+    "fiber": [
+      {"name":"FCC National Broadband Map","authority":"Federal Communications Commission","url":"https://broadbandmap.fcc.gov/","use":"Reported fixed-broadband availability at location level."},
+      {"name":"FCC Broadband Data Collection","authority":"Federal Communications Commission","url":"https://www.fcc.gov/BroadbandData","use":"Provider/location availability evidence and methodology context."}
+    ],
+    "environmental": [
+      {"name":"EPA ECHO Exporter","authority":"U.S. Environmental Protection Agency","url":"https://echo.epa.gov/tools/data-downloads","use":"Cross-program regulated-facility context with coordinates and permit identifiers."}
+    ]
+  },
+  "release_gates": [
+    "Resolve exact parcel and serving authority before treating territory as known.",
+    "Require a written utility or authority response before converting modeled headroom to verified capacity.",
+    "Keep observed/reported source dates distinct from retrieval dates.",
+    "Do not infer serviceability from proximity to a line, plant, outfall, substation, pipeline or fiber route.",
+    "For high-load projects, preserve study/upgrade lead time as unknown until the serving utility provides it."
+  ]
+}
