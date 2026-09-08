@@ -1,6 +1,8 @@
 'use strict';
 (()=>{
   const G=window.GGX;if(!G)return;
+  const theme=document.querySelector('meta[name="theme-color"]');if(theme)theme.setAttribute('content','#091016');
+  const icon=document.querySelector('link[rel="icon"]');if(icon)icon.setAttribute('href','data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="10" fill="%23091016"/><g transform="translate(50 50) rotate(45) translate(-50 -50)"><rect x="22" y="22" width="56" height="56" fill="none" stroke="%2373dff2" stroke-width="5"/><rect x="32" y="32" width="14" height="14" fill="%23ff6a2a"/><rect x="54" y="32" width="14" height="14" fill="%2373dff2"/><rect x="32" y="54" width="14" height="14" fill="%2373dff2"/><rect x="54" y="54" width="14" height="14" fill="%23ff6a2a"/></g></svg>');
   G.injectStyle('gg-os-identity-hardening',`
     :root{--paper:var(--gg-bg)!important;--panel:var(--gg-panel)!important;--ink:var(--gg-ink)!important;--muted:var(--gg-muted)!important;--line:var(--gg-line)!important;--orange:var(--gg-orange)!important;--lime:var(--gg-cyan)!important;--red:var(--gg-red)!important;--amber:var(--gg-yellow)!important;--green:var(--gg-green)!important;--blue:var(--gg-cyan)!important;--shadow:none!important}
     .gg-os .hero:before{display:none!important}.gg-os button:focus-visible,.gg-os a:focus-visible,.gg-os input:focus-visible,.gg-os select:focus-visible,.gg-os textarea:focus-visible,.gg-os summary:focus-visible{outline:2px solid var(--gg-orange)!important;outline-offset:3px!important}
