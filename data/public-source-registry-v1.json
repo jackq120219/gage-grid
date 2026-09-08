@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "purpose": "Authoritative public-source registry used to replace prototype assumptions with verifiable infrastructure evidence. These sources do not constitute utility capacity commitments.",
+  "sources": [
+    {
+      "system": "power",
+      "name": "U.S. Energy Information Administration — State Electricity Profiles",
+      "url": "https://www.eia.gov/electricity/state/",
+      "authority": "U.S. Energy Information Administration",
+      "use": "Utility, generation, load and state electricity context; not site-specific available capacity."
+    },
+    {
+      "system": "water",
+      "name": "USGS Water Data for the Nation",
+      "url": "https://waterdata.usgs.gov/nwis",
+      "authority": "U.S. Geological Survey",
+      "use": "Observed hydrologic and water-resource context; not a municipal service commitment."
+    },
+    {
+      "system": "wastewater",
+      "name": "EPA ECHO",
+      "url": "https://echo.epa.gov/",
+      "authority": "U.S. Environmental Protection Agency",
+      "use": "Permitted wastewater and environmental facility evidence; capacity must be confirmed with the serving authority."
+    },
+    {
+      "system": "gas",
+      "name": "National Pipeline Mapping System",
+      "url": "https://www.npms.phmsa.dot.gov/",
+      "authority": "Pipeline and Hazardous Materials Safety Administration",
+      "use": "Transmission pipeline proximity/context; deliverability and pressure require utility confirmation."
+    },
+    {
+      "system": "fiber",
+      "name": "FCC National Broadband Map",
+      "url": "https://broadbandmap.fcc.gov/",
+      "authority": "Federal Communications Commission",
+      "use": "Reported broadband service availability; route diversity and enterprise capacity require provider confirmation."
+    }
+  ],
+  "state_sources": {
+    "IL": [
+      {
+        "name": "Illinois Commerce Commission",
+        "url": "https://www.icc.illinois.gov/",
+        "use": "Regulated utility filings, service-territory and infrastructure proceedings."
+      }
+    ],
+    "IN": [
+      {
+        "name": "Indiana Utility Regulatory Commission",
+        "url": "https://www.in.gov/iurc/",
+        "use": "Regulated utility filings, service-territory and infrastructure proceedings."
+      }
+    ]
+  }
+}
