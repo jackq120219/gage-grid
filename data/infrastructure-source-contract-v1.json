@@ -1,0 +1,33 @@
+{
+  "schema": "gagegrid.infrastructure-evidence.v1",
+  "purpose": "Minimum provenance contract for production infrastructure records so project screening can distinguish a nearby asset from usable, supportable service capacity.",
+  "required_fields": [
+    "site_id",
+    "system",
+    "service_territory",
+    "source_uri",
+    "source_title",
+    "publisher",
+    "retrieved_at",
+    "observed_at",
+    "evidence_class",
+    "capacity_value",
+    "capacity_unit",
+    "usable_headroom_method",
+    "lead_time_months",
+    "confidence",
+    "verification_status"
+  ],
+  "systems": ["Power", "Water", "Wastewater", "Gas", "Fiber"],
+  "evidence_classes": ["Verified", "Reported", "Modeled", "Unknown"],
+  "verification_statuses": ["Unverified", "Requested", "Received", "Verified", "Rejected"],
+  "rules": [
+    "A nearby utility asset is not evidence of serviceability by itself.",
+    "Usable headroom must be distinguishable from nameplate or system-wide capacity.",
+    "Observation time and retrieval time are separate fields.",
+    "Modeled lead time must not be presented as a utility commitment.",
+    "Written utility or infrastructure evidence supersedes prototype assumptions for the same field.",
+    "A rejected or contradictory source must remain in the audit trail rather than being silently deleted.",
+    "Production rankings must expose the weakest dependency and any evidence discount applied to it."
+  ]
+}
