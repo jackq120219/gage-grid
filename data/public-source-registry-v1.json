@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "purpose": "Authoritative public-source registry used to replace prototype assumptions with verifiable infrastructure evidence. These sources do not constitute utility capacity commitments.",
   "sources": [
     {
@@ -53,5 +53,67 @@
         "use": "Regulated utility filings, service-territory and infrastructure proceedings."
       }
     ]
+  },
+  "utility_candidates": {
+    "Joliet South": {
+      "power": {"name":"ComEd","url":"https://www.comed.com/"},
+      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
+      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
+    },
+    "Elwood Logistics Belt": {
+      "power": {"name":"ComEd","url":"https://www.comed.com/"},
+      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
+      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
+    },
+    "Rockford East": {
+      "power": {"name":"ComEd","url":"https://www.comed.com/"},
+      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
+      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
+    },
+    "Decatur Industrial Core": {
+      "power": {"name":"Ameren Illinois","url":"https://www.ameren.com/illinois"},
+      "gas": {"name":"Ameren Illinois","url":"https://www.ameren.com/illinois"},
+      "note":"Likely serving utility for screening only. Verify the exact parcel/service address and account territory before using in diligence."
+    },
+    "Aurora West": {
+      "power": {"name":"ComEd","url":"https://www.comed.com/"},
+      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
+      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
+    },
+    "Kankakee North": {
+      "power": {"name":"ComEd","url":"https://www.comed.com/"},
+      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
+      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
+    },
+    "Burns Harbor West": {
+      "power": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
+      "gas": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
+      "note":"Likely serving utility for screening only. Verify the exact parcel/service address before using in diligence."
+    },
+    "Gary South": {
+      "power": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
+      "gas": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
+      "note":"Likely serving utility for screening only. Verify the exact parcel/service address before using in diligence."
+    },
+    "South Bend Tech Belt": {
+      "power": {"name":"Indiana Michigan Power","url":"https://www.indianamichiganpower.com/"},
+      "gas": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
+      "note":"Likely serving utilities for screening only. Exact boundaries can vary by parcel; verify before diligence."
+    },
+    "Fort Wayne North": {
+      "power": {"name":"Indiana Michigan Power","url":"https://www.indianamichiganpower.com/"},
+      "gas": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
+      "note":"Likely serving utilities for screening only. Exact boundaries can vary by parcel; verify before diligence."
+    },
+    "Lafayette East": {
+      "power": {"name":"Duke Energy Indiana","url":"https://www.duke-energy.com/home"},
+      "gas": {"name":"Verify local gas distribution territory","url":"https://www.in.gov/iurc/"},
+      "note":"Power candidate is for screening only. Gas service territory must be resolved for the exact parcel."
+    },
+    "Evansville North": {
+      "power": {"name":"CenterPoint Energy Indiana","url":"https://www.centerpointenergy.com/"},
+      "gas": {"name":"CenterPoint Energy Indiana","url":"https://www.centerpointenergy.com/"},
+      "note":"Likely serving utility for screening only. Verify the exact parcel/service address before using in diligence."
+    }
   }
 }
