@@ -1,0 +1,6 @@
+'use strict';
+(()=>{
+ const G=window.GGX;if(!G)return;
+ function mount(){const ranking=document.getElementById('ranking');if(!ranking||document.getElementById('ggShortlistCopy'))return;const btn=document.createElement('button');btn.id='ggShortlistCopy';btn.type='button';btn.className='gg-shortlist-copy';btn.textContent='COPY TOP-3 SHORTLIST';ranking.insertAdjacentElement('afterbegin',btn);btn.onclick=async()=>{const ranked=G.rank().slice(0,3);if(!ranked.length){G.toast('Run a project screen first');return}const text=['Gage Grid — Project Shortlist',...ranked.map((a,i)=>`${i+1}. ${a.s.name} — ${a.verdict} — ${a.low}-${a.high} — weakest: ${a.worst?.name||'unknown'} (${Math.round((a.worst?.ratio||0)*100)}%)`),'Screening output only; verify parcel-level utility facts in writing.'].join('\n');await G.copy(text)}}
+ G.injectStyle('gg-shortlist-copy-css',`.gg-shortlist-copy{float:right;margin:0 0 8px 8px;border:1px solid #c7cdd1;background:#fff;padding:7px 9px;font:800 8px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.05em;cursor:pointer}.gg-shortlist-copy:hover{border-color:#2f55d9;color:#2f55d9}`);if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount()
+})();
