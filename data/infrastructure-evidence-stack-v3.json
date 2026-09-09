@@ -1,0 +1,61 @@
+{
+  "version": 3,
+  "purpose": "Authoritative source map for industrial-site diligence. Public evidence improves screening direction but never constitutes utility serviceability, available headroom, treatment capacity, pressure, redundancy, route diversity or delivery timing.",
+  "systems": {
+    "power": [
+      {"name":"EIA Form 861","authority":"U.S. Energy Information Administration","url":"https://www.eia.gov/electricity/data/eia861/","use":"Utility identity, customers, sales, reliability and service context."},
+      {"name":"EIA Form 860","authority":"U.S. Energy Information Administration","url":"https://www.eia.gov/electricity/data/eia860/","use":"Generation assets and planned generator context; not distribution headroom."},
+      {"name":"FERC transmission planning","authority":"Federal Energy Regulatory Commission","url":"https://www.ferc.gov/industries-data/electric/power-sales-and-markets/transmission-planning","use":"Regional transmission-planning and expansion context."},
+      {"name":"MISO interconnection queue","authority":"Midcontinent Independent System Operator","url":"https://www.misoenergy.org/planning/generator-interconnection/GI_Queue/","use":"Regional generation/interconnection queue context only; not parcel serviceability."},
+      {"name":"PJM interconnection queues","authority":"PJM Interconnection","url":"https://www.pjm.com/planning/service-requests/interconnection-queues","use":"Regional queue and grid-development context only; not parcel serviceability."}
+    ],
+    "water": [
+      {"name":"USGS Water Data for the Nation","authority":"U.S. Geological Survey","url":"https://waterdata.usgs.gov/nwis","use":"Observed surface-water, groundwater and hydrologic context."},
+      {"name":"EPA drinking-water dashboard","authority":"U.S. Environmental Protection Agency","url":"https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard","use":"Public water-system identity and regulatory context."}
+    ],
+    "wastewater": [
+      {"name":"EPA ICIS-NPDES discharge points","authority":"U.S. Environmental Protection Agency","url":"https://echo.epa.gov/tools/data-downloads/icis-npdes-discharge-points-download-summary","use":"Permits, outfalls, coordinates and reported design-flow fields where available."},
+      {"name":"EPA ECHO","authority":"U.S. Environmental Protection Agency","url":"https://echo.epa.gov/","use":"Wastewater permit, compliance and regulated-facility evidence."}
+    ],
+    "gas": [
+      {"name":"National Pipeline Mapping System","authority":"PHMSA","url":"https://www.npms.phmsa.dot.gov/","use":"Transmission-pipeline corridor context; no assumption of tap availability or pressure."},
+      {"name":"PHMSA pipeline data","authority":"PHMSA","url":"https://www.phmsa.dot.gov/data-and-statistics/pipeline/data-and-statistics-overview","use":"Operator, system and safety context."}
+    ],
+    "fiber": [
+      {"name":"FCC National Broadband Map","authority":"Federal Communications Commission","url":"https://broadbandmap.fcc.gov/","use":"Reported fixed-broadband availability at location level."},
+      {"name":"FCC Broadband Data Collection","authority":"Federal Communications Commission","url":"https://www.fcc.gov/BroadbandData","use":"Provider/location availability data and methodology."}
+    ],
+    "environmental": [
+      {"name":"EPA ECHO data downloads","authority":"U.S. Environmental Protection Agency","url":"https://echo.epa.gov/tools/data-downloads","use":"Cross-program regulated-facility and permit context."},
+      {"name":"FEMA National Flood Hazard Layer","authority":"Federal Emergency Management Agency","url":"https://www.fema.gov/flood-maps/national-flood-hazard-layer","use":"Flood-hazard screening; local map amendments and site engineering still require review."},
+      {"name":"National Wetlands Inventory","authority":"U.S. Fish & Wildlife Service","url":"https://www.fws.gov/program/national-wetlands-inventory/wetlands-mapper","use":"Wetland screening; not a jurisdictional determination."}
+    ],
+    "transport": [
+      {"name":"National Transportation Atlas Database","authority":"U.S. Bureau of Transportation Statistics","url":"https://geodata.bts.gov/","use":"National freight, road, rail, port and intermodal infrastructure context."},
+      {"name":"FRA Crossing Inventory","authority":"Federal Railroad Administration","url":"https://railroads.dot.gov/safety-data/crossing-and-inventory-data/crossing-inventory-lookup","use":"Rail crossing and network context; not rail service commitment."}
+    ]
+  },
+  "verification_requirements": {
+    "power":["exact serving utility","written available-capacity or study response","required voltage/service configuration","upgrade scope","estimated study and energization timing","redundancy path if required"],
+    "water":["serving authority","written available flow","pressure range","connection size/path","treatment or source constraints","delivery timing"],
+    "wastewater":["serving authority","written accepted flow/load","treatment constraints","pretreatment requirements","connection path","delivery timing"],
+    "gas":["serving utility","written pressure/volume availability","tap or extension requirement","firm/interruption terms if relevant","upgrade scope","delivery timing"],
+    "fiber":["provider at exact parcel","enterprise capacity","route diversity","entrance facilities","construction scope","delivery timing"]
+  },
+  "adversarial_tests":[
+    "Increase all project utility loads by 15%.",
+    "Increase all project utility loads by 30%.",
+    "Compress required online date by 6 months.",
+    "Combine 30% load growth with a 9-month schedule compression.",
+    "Assume the strongest unverified dependency fails until written proof exists."
+  ],
+  "release_gates":[
+    "Resolve exact parcel and serving authority before treating territory as known.",
+    "Require a written utility or authority response before converting modeled headroom to verified capacity.",
+    "Keep observed/reported source dates distinct from retrieval dates.",
+    "Do not infer serviceability from proximity to a line, plant, outfall, substation, pipeline, roadway, rail line or fiber route.",
+    "Do not infer redundant service from multiple nearby assets or providers.",
+    "For high-load projects, preserve study and upgrade lead time as unknown until the serving utility provides it.",
+    "Environmental and transportation sources can create diligence flags but cannot improve utility feasibility scores."
+  ]
+}
