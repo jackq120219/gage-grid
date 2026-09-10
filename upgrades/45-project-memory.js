@@ -1,6 +1,7 @@
 'use strict';
 (()=>{
- const G=window.GGX;if(!G)return,KEY='gage-grid-project-history-v1';
+ const G=window.GGX;if(!G)return;
+ const KEY='gage-grid-project-history-v1';
  const read=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(_e){return[]}},write=x=>{try{localStorage.setItem(KEY,JSON.stringify(x.slice(0,10)))}catch(_e){}};
  function snapshot(a,r){if(!a||!r)return;const item={ts:Date.now(),site:a.s.id,siteName:a.s.name,verdict:a.verdict,score:a.low,weak:a.worst.name,req:{...r}};let list=read().filter(x=>!(x.site===item.site&&Math.abs(x.ts-item.ts)<30000));list.unshift(item);write(list);renderHistory()}
  function restore(item){const map={projectType:item.req.projectType,powerReq:item.req.power,waterReq:item.req.water,wasteReq:item.req.waste,gasReq:item.req.gas,fiberReq:item.req.fiber,powerRedundancy:item.req.redundancy,growth:Math.round(item.req.growth*100),timeline:item.req.timeline,risk:item.req.risk,capitalExposure:item.req.capital,siteSelect:item.site};Object.entries(map).forEach(([id,val])=>{const el=document.getElementById(id);if(el){el.value=val;el.dispatchEvent(new Event('change',{bubbles:true}))}});document.getElementById('analyseBtn')?.click();setTimeout(()=>document.getElementById('decision-gate')?.scrollIntoView({behavior:'smooth',block:'start'}),120)}
