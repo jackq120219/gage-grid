@@ -1,6 +1,6 @@
 'use strict';
 const pilot=require('../data/pilot-sites-v2.json');
-const number=v=>{const n=Number(String(v??'').replace(/[^0-9.-]/g,''));return Number.isFinite(n)?n:null};
+const number=v=>{const raw=String(v??'').trim();if(!raw)return null;const cleaned=raw.replace(/[^0-9.-]/g,'');if(!cleaned||cleaned==='-'||cleaned==='.'||cleaned==='-.')return null;const n=Number(cleaned);return Number.isFinite(n)?n:null};
 module.exports=async function handler(req,res){
   res.setHeader('Cache-Control','s-maxage=1800, stale-while-revalidate=7200');
   const id=String(req.query?.site||'').trim(),site=(pilot.sites||[]).find(s=>s.id===id);
