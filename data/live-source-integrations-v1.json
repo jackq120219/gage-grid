@@ -1,0 +1,9 @@
+{
+  "schema":"gagegrid.live-integrations.v1",
+  "version":1,
+  "reviewed_at":"2026-09-10",
+  "sources":[
+    {"id":"usgs-nwis-water","authority":"U.S. Geological Survey","endpoint":"/api/usgs-water","status":"integrated","decision_use":"current hydrology context near a pilot node","can_prove_serviceability":false,"freshness_target_minutes":180},
+    {"id":"epa-echo","authority":"U.S. Environmental Protection Agency","endpoint":"/api/epa-echo","status":"integrated","decision_use":"nearby regulated-facility and compliance context","can_prove_serviceability":false,"freshness_target_minutes":10080}
+  ]
+}

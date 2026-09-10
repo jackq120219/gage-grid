@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-const sites=read('data/pilot-sites-v2.json'),presets=read('data/project-presets-v2.json'),registry=read('data/public-source-registry-v1.json'),evidence=read('data/evidence-contract-v1.json');
+const sites=read('data/pilot-sites-v2.json'),presets=read('data/project-presets-v2.json'),registry=read('data/public-source-registry-v1.json'),evidence=read('data/evidence-contract-v1.json'),live=read('data/live-source-integrations-v1.json');
 let bad=0;const fail=m=>{console.error(`DATA: ${m}`);bad++};
 if(sites.capacity_data_status!=='simulated')fail('pilot capacity status must remain simulated');
 if(sites.sites?.length!==12)fail('expected 12 pilot sites');
@@ -13,4 +13,7 @@ for(const s of registry.sources||[]){if(!/^https:\/\//.test(s.url||''))fail(`sou
 if(Object.keys(registry.utility_candidates||{}).length!==12)fail('utility candidate coverage must match 12 sites');
 if(!evidence.states?.['utility-commitment']?.can_prove_serviceability)fail('utility commitment must be the only positive serviceability state');
 for(const [k,v] of Object.entries(evidence.states||{}))if(k!=='utility-commitment'&&v.can_prove_serviceability)fail(`${k} cannot prove serviceability`);
-if(bad)process.exit(1);console.log(`DATA AUDIT OK: ${sites.sites.length} sites, ${Object.keys(presets.presets).length} presets, ${registry.sources.length} public systems`);
+const integrated=(live.sources||[]).filter(s=>s.status==='integrated');
+if(integrated.length<2)fail('expected at least two live public integrations');
+for(const s of integrated){if(!/^\/api\//.test(s.endpoint||''))fail(`live source ${s.id} missing API endpoint`);if(s.can_prove_serviceability!==false)fail(`live source ${s.id} may not prove serviceability`);if(!Number.isFinite(s.freshness_target_minutes))fail(`live source ${s.id} missing freshness target`)}
+if(bad)process.exit(1);console.log(`DATA AUDIT OK: ${sites.sites.length} sites, ${Object.keys(presets.presets).length} presets, ${registry.sources.length} public systems, ${integrated.length} live integrations`);
