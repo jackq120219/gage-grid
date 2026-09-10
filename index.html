@@ -18,7 +18,7 @@
 <title>Gage Grid — Industrial Site Capacity Intelligence</title>
 </head>
 <body>
-<div class="ribbon">SIMULATED MIDWEST PILOT · DECISION ENGINE V3 · PRODUCTION DATA REQUIRES SOURCE + UTILITY VERIFICATION</div>
+<div class="ribbon">SIMULATED CAPACITY PILOT · LIVE PUBLIC EVIDENCE WHERE LABELED · UTILITY VERIFICATION REQUIRED</div>
 <header class="top">
   <a class="brand" href="#top"><span class="mark"><i></i><i></i><i></i></span><span>GAGE<br>GRID</span></a>
   <nav aria-label="Primary navigation"><a href="#screen">Screen</a><a href="#rank">Rank</a><a href="#compare">Compare</a><a href="#registry">Registry</a><a href="#changes">Changes</a><a href="#method">Method</a></nav>
@@ -75,7 +75,7 @@
   <div class="filters"><label>SEARCH<input id="regSearch" placeholder="Site, county, utility class…"></label><label>STATE<select id="region"><option value="all">All</option><option value="IL">Illinois</option><option value="IN">Indiana</option></select></label><label>SYSTEM<select id="type"><option value="all">All systems</option><option>Power</option><option>Water</option><option>Wastewater</option><option>Gas</option><option>Fiber</option></select></label><label>EVIDENCE<select id="evidence"><option value="all">All evidence</option><option>Verified</option><option>Reported</option><option>Modeled</option></select></label><button class="clear" id="clear" type="button">Clear filters</button></div>
   <div class="registry-actions"><span id="registrySummary">60 records</span><button class="smallbtn" id="exportRegistryBtn" type="button">EXPORT FILTERED CSV</button></div>
   <div class="tablewrap"><table><thead><tr><th>Record</th><th>Site node</th><th>State</th><th>System</th><th>Usable headroom</th><th>Evidence</th><th>Confidence</th><th>Lead time</th><th>Updated</th></tr></thead><tbody id="rows"></tbody></table></div>
-  <p class="note">All pilot records are simulated to demonstrate product behavior. Production records should attach source URI, retrieval date, service territory, methodology and utility verification status.</p>
+  <p class="note">Capacity and headroom records in this pilot are simulated. Public-evidence panels may query live authoritative context and are labeled separately; neither public-source presence nor proximity is a utility service commitment.</p>
 </section>
 
 <section id="changes" class="section shell"><div class="kicker">CHANGE DETECTION</div><div class="head"><h2>What moved?</h2><p>The highest-value record is often the one that changed. Gage Grid is designed to flag additions, constraint changes, stale evidence and project-timing shifts.</p></div><div class="changegrid" id="changeGrid"></div></section>
