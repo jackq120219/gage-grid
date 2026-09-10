@@ -1,0 +1,52 @@
+name: Activate Gage Grid project intelligence v2
+
+on:
+  push:
+    paths:
+      - '.github/workflows/activate-project-intelligence-v2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Activate evidence and comparison layers
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('mission-upgrades.js')
+          s=p.read_text()
+          old="'52-evidence-integrity-audit.js','53-adversarial-stress-matrix.js','sep9-sprint.js'];"
+          new="'52-evidence-integrity-audit.js','53-adversarial-stress-matrix.js','sep9-sprint.js','41-evidence-provenance.js','42-shortlist-workspace.js','50-public-evidence-layer.js','54-project-intelligence-v2.js'];"
+          if old not in s:
+              raise SystemExit('feature chain target not found')
+          p.write_text(s.replace(old,new,1))
+
+          p=Path('index.html')
+          s=p.read_text()
+          s=s.replace('SIMULATED MIDWEST PILOT · DECISION ENGINE V3 · PRODUCTION DATA REQUIRES SOURCE + UTILITY VERIFICATION','SIMULATED CAPACITY PILOT · LIVE PUBLIC EVIDENCE WHERE LABELED · UTILITY VERIFICATION REQUIRED',1)
+          s=s.replace('All pilot records are simulated to demonstrate product behavior. Production records should attach source URI, retrieval date, service territory, methodology and utility verification status.','Capacity and headroom records in this pilot are simulated. Public-evidence panels may query live authoritative context and are labeled separately; neither public-source presence nor proximity is a utility service commitment.',1)
+          p.write_text(s)
+          PY
+          node --check mission-upgrades.js
+          node --check upgrades/41-evidence-provenance.js
+          node --check upgrades/42-shortlist-workspace.js
+          node --check upgrades/50-public-evidence-layer.js
+          node --check upgrades/54-project-intelligence-v2.js
+          node --check api/usgs-water.js
+      - name: Commit activation
+        run: |
+          git config user.name "Gage Grid Product"
+          git config user.email "actions@users.noreply.github.com"
+          git add mission-upgrades.js index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "feat: activate live evidence and project comparison v2"
+          git push
