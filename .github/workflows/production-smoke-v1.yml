@@ -1,0 +1,32 @@
+name: Gage Grid Production Smoke
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '29 13 * * *'
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Homepage and assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://gage-grid.vercel.app'
+          curl -fsS "$base/" -o /tmp/home
+          test $(wc -c </tmp/home) -gt 5000
+          curl -fsS "$base/app.js" -o /tmp/app.js
+          test $(wc -c </tmp/app.js) -gt 5000
+      - name: Data and health APIs
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://gage-grid.vercel.app'
+          curl -fsS "$base/api/health" | grep -q '"ok":true'
+          curl -fsS "$base/api/source-registry" | grep -q '"reviewed_at":"2026-09-10"'
+          curl -fsS "$base/api/pilot-data" | grep -q '"capacityDataStatus":"simulated"'
+      - name: Live USGS evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsS 'https://gage-grid.vercel.app/api/usgs-water?site=GG-IL-101' | grep -q '"dataStatus":"live-public"'

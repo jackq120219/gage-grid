@@ -1,0 +1,16 @@
+{
+  "schema":"gagegrid.project-presets.v2",
+  "version":2,
+  "units":{"power":"MW","water":"MGD","wastewater":"MGD","gas":"MMBtu/h","fiber":"ordinal route requirement","redundancy":"ordinal topology requirement"},
+  "note":"Mirrors the editable prototype defaults in app.js; these are screening baselines, not engineering design loads.",
+  "presets":{
+    "data":{"label":"Data center / compute","power":45,"water":0.28,"wastewater":0.18,"gas":10,"fiber":3,"redundancy":3},
+    "manufacturing":{"label":"Advanced manufacturing","power":18,"water":0.75,"wastewater":0.58,"gas":165,"fiber":2,"redundancy":2},
+    "semiconductor":{"label":"Semiconductor / high-spec fab","power":62,"water":2.2,"wastewater":1.55,"gas":140,"fiber":3,"redundancy":3},
+    "food":{"label":"Food / beverage processing","power":7,"water":1.4,"wastewater":1.15,"gas":120,"fiber":1,"redundancy":1},
+    "cold":{"label":"Cold storage","power":9,"water":0.08,"wastewater":0.04,"gas":35,"fiber":1,"redundancy":1},
+    "battery":{"label":"Battery / energy manufacturing","power":28,"water":0.52,"wastewater":0.36,"gas":90,"fiber":2,"redundancy":2},
+    "warehouse":{"label":"Distribution / warehouse","power":3.5,"water":0.04,"wastewater":0.03,"gas":18,"fiber":1,"redundancy":1},
+    "custom":{"label":"Custom industrial load","power":10,"water":0.3,"wastewater":0.2,"gas":50,"fiber":1,"redundancy":1}
+  }
+}

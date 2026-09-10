@@ -1,0 +1,20 @@
+{
+  "schema":"gagegrid.pilot-sites.v2",
+  "version":2,
+  "capacity_data_status":"simulated",
+  "coordinate_basis":"city-area pilot node approximation, not parcel geocode",
+  "sites":[
+    {"id":"GG-IL-101","name":"Joliet South","county":"Will County","state":"IL","lat":41.525,"lng":-88.081,"usgs_gauge":"05537980"},
+    {"id":"GG-IL-102","name":"Elwood Logistics Belt","county":"Will County","state":"IL","lat":41.404,"lng":-88.111,"usgs_gauge":"05527500"},
+    {"id":"GG-IL-103","name":"Rockford East","county":"Winnebago County","state":"IL","lat":42.271,"lng":-88.947,"usgs_gauge":"05437645"},
+    {"id":"GG-IL-104","name":"Decatur Industrial Core","county":"Macon County","state":"IL","lat":39.84,"lng":-88.954,"usgs_gauge":"05573540"},
+    {"id":"GG-IL-105","name":"Aurora West","county":"Kane County","state":"IL","lat":41.76,"lng":-88.38,"usgs_gauge":"05551540"},
+    {"id":"GG-IL-106","name":"Kankakee North","county":"Kankakee County","state":"IL","lat":41.12,"lng":-87.86,"usgs_gauge":"05527500"},
+    {"id":"GG-IN-201","name":"Burns Harbor West","county":"Porter County","state":"IN","lat":41.62,"lng":-87.13,"usgs_gauge":"04094000"},
+    {"id":"GG-IN-202","name":"Gary South","county":"Lake County","state":"IN","lat":41.55,"lng":-87.35,"usgs_gauge":"05536195"},
+    {"id":"GG-IN-203","name":"South Bend Tech Belt","county":"St. Joseph County","state":"IN","lat":41.68,"lng":-86.25,"usgs_gauge":"04101225"},
+    {"id":"GG-IN-204","name":"Fort Wayne North","county":"Allen County","state":"IN","lat":41.08,"lng":-85.14,"usgs_gauge":"04182900"},
+    {"id":"GG-IN-205","name":"Lafayette East","county":"Tippecanoe County","state":"IN","lat":40.42,"lng":-86.82,"usgs_gauge":"03335500"},
+    {"id":"GG-IN-206","name":"Evansville North","county":"Vanderburgh County","state":"IN","lat":38,"lng":-87.55,"usgs_gauge":"03322011"}
+  ]
+}

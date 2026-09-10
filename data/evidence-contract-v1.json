@@ -1,0 +1,19 @@
+{
+  "schema":"gagegrid.evidence-state.v1",
+  "version":1,
+  "states":{
+    "live-public":{"meaning":"Current observation returned from an identified public authority.","can_prove_serviceability":false},
+    "verified":{"meaning":"Pilot record supported by stronger evidence, still not a utility commitment unless explicitly labeled as one.","can_prove_serviceability":false},
+    "reported":{"meaning":"Capacity or condition reported by a source but not independently verified for the exact parcel.","can_prove_serviceability":false},
+    "modeled":{"meaning":"Prototype estimate or inferred screening value.","can_prove_serviceability":false},
+    "unknown":{"meaning":"Insufficient evidence to state the condition responsibly.","can_prove_serviceability":false},
+    "utility-commitment":{"meaning":"Written service/capacity confirmation tied to the exact project and parcel.","can_prove_serviceability":true}
+  },
+  "rules":[
+    "Simulated capacity records and live public observations must never be merged into one unlabeled value.",
+    "Proximity to infrastructure does not establish deliverability, pressure, headroom, allocation, route diversity or service territory.",
+    "Every live observation retains source, monitoring location, observation time and retrieval time.",
+    "Stale observations remain visible as stale rather than being silently treated as current.",
+    "The exact parcel and project load require serving-utility or authority verification before a serviceability claim."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://gage-grid.vercel.app/data/public-source-registry.schema.json",
+  "title":"Gage Grid public source registry",
+  "type":"object",
+  "required":["version","reviewed_at","sources","state_sources","utility_candidates"],
+  "properties":{
+    "version":{"type":"integer","minimum":1},
+    "reviewed_at":{"type":"string","format":"date"},
+    "sources":{"type":"array","minItems":5,"items":{"type":"object","required":["system","name","url","authority","use","scope","site_specificity","freshness_target_days","access","status"]}},
+    "state_sources":{"type":"object","required":["IL","IN"]},
+    "utility_candidates":{"type":"object","minProperties":12}
+  }
+}

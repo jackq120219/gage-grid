@@ -1,119 +1,31 @@
 {
-  "version": 2,
+  "version": 3,
+  "reviewed_at": "2026-09-10",
   "purpose": "Authoritative public-source registry used to replace prototype assumptions with verifiable infrastructure evidence. These sources do not constitute utility capacity commitments.",
+  "freshness_policy": "Each source carries a target review interval. Source availability or proximity must never be promoted to parcel serviceability without serving-utility confirmation.",
   "sources": [
-    {
-      "system": "power",
-      "name": "U.S. Energy Information Administration — State Electricity Profiles",
-      "url": "https://www.eia.gov/electricity/state/",
-      "authority": "U.S. Energy Information Administration",
-      "use": "Utility, generation, load and state electricity context; not site-specific available capacity."
-    },
-    {
-      "system": "water",
-      "name": "USGS Water Data for the Nation",
-      "url": "https://waterdata.usgs.gov/nwis",
-      "authority": "U.S. Geological Survey",
-      "use": "Observed hydrologic and water-resource context; not a municipal service commitment."
-    },
-    {
-      "system": "wastewater",
-      "name": "EPA ECHO",
-      "url": "https://echo.epa.gov/",
-      "authority": "U.S. Environmental Protection Agency",
-      "use": "Permitted wastewater and environmental facility evidence; capacity must be confirmed with the serving authority."
-    },
-    {
-      "system": "gas",
-      "name": "National Pipeline Mapping System",
-      "url": "https://www.npms.phmsa.dot.gov/",
-      "authority": "Pipeline and Hazardous Materials Safety Administration",
-      "use": "Transmission pipeline proximity/context; deliverability and pressure require utility confirmation."
-    },
-    {
-      "system": "fiber",
-      "name": "FCC National Broadband Map",
-      "url": "https://broadbandmap.fcc.gov/",
-      "authority": "Federal Communications Commission",
-      "use": "Reported broadband service availability; route diversity and enterprise capacity require provider confirmation."
-    }
+    {"system":"power","name":"U.S. Energy Information Administration — State Electricity Profiles","url":"https://www.eia.gov/electricity/state/","authority":"U.S. Energy Information Administration","use":"Utility, generation, load and state electricity context; not site-specific available capacity.","scope":"state-system context","site_specificity":"low","freshness_target_days":120,"access":"public","status":"reference"},
+    {"system":"water","name":"USGS Water Data for the Nation","url":"https://waterdata.usgs.gov/nwis","authority":"U.S. Geological Survey","use":"Observed hydrologic and water-resource context; not a municipal service commitment.","scope":"monitoring-location observations","site_specificity":"nearby-context","freshness_target_days":1,"access":"public-api","status":"live-context"},
+    {"system":"wastewater","name":"EPA ECHO","url":"https://echo.epa.gov/","authority":"U.S. Environmental Protection Agency","use":"Permitted wastewater and environmental facility evidence; capacity must be confirmed with the serving authority.","scope":"regulated facility and permit context","site_specificity":"facility-level","freshness_target_days":30,"access":"public","status":"reference"},
+    {"system":"gas","name":"National Pipeline Mapping System","url":"https://www.npms.phmsa.dot.gov/","authority":"Pipeline and Hazardous Materials Safety Administration","use":"Transmission pipeline proximity/context; deliverability and pressure require utility confirmation.","scope":"transmission infrastructure context","site_specificity":"corridor-level","freshness_target_days":180,"access":"public-restricted-detail","status":"reference"},
+    {"system":"fiber","name":"FCC National Broadband Map","url":"https://broadbandmap.fcc.gov/","authority":"Federal Communications Commission","use":"Reported broadband service availability; route diversity and enterprise capacity require provider confirmation.","scope":"reported service availability","site_specificity":"location-level","freshness_target_days":180,"access":"public","status":"reference"}
   ],
   "state_sources": {
-    "IL": [
-      {
-        "name": "Illinois Commerce Commission",
-        "url": "https://www.icc.illinois.gov/",
-        "use": "Regulated utility filings, service-territory and infrastructure proceedings."
-      }
-    ],
-    "IN": [
-      {
-        "name": "Indiana Utility Regulatory Commission",
-        "url": "https://www.in.gov/iurc/",
-        "use": "Regulated utility filings, service-territory and infrastructure proceedings."
-      }
-    ]
+    "IL": [{"name":"Illinois Commerce Commission","url":"https://www.icc.illinois.gov/","use":"Regulated utility filings, service-territory and infrastructure proceedings.","freshness_target_days":30}],
+    "IN": [{"name":"Indiana Utility Regulatory Commission","url":"https://www.in.gov/iurc/","use":"Regulated utility filings, service-territory and infrastructure proceedings.","freshness_target_days":30}]
   },
   "utility_candidates": {
-    "Joliet South": {
-      "power": {"name":"ComEd","url":"https://www.comed.com/"},
-      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
-      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
-    },
-    "Elwood Logistics Belt": {
-      "power": {"name":"ComEd","url":"https://www.comed.com/"},
-      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
-      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
-    },
-    "Rockford East": {
-      "power": {"name":"ComEd","url":"https://www.comed.com/"},
-      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
-      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
-    },
-    "Decatur Industrial Core": {
-      "power": {"name":"Ameren Illinois","url":"https://www.ameren.com/illinois"},
-      "gas": {"name":"Ameren Illinois","url":"https://www.ameren.com/illinois"},
-      "note":"Likely serving utility for screening only. Verify the exact parcel/service address and account territory before using in diligence."
-    },
-    "Aurora West": {
-      "power": {"name":"ComEd","url":"https://www.comed.com/"},
-      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
-      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
-    },
-    "Kankakee North": {
-      "power": {"name":"ComEd","url":"https://www.comed.com/"},
-      "gas": {"name":"Nicor Gas","url":"https://www.nicorgas.com/"},
-      "note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."
-    },
-    "Burns Harbor West": {
-      "power": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
-      "gas": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
-      "note":"Likely serving utility for screening only. Verify the exact parcel/service address before using in diligence."
-    },
-    "Gary South": {
-      "power": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
-      "gas": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
-      "note":"Likely serving utility for screening only. Verify the exact parcel/service address before using in diligence."
-    },
-    "South Bend Tech Belt": {
-      "power": {"name":"Indiana Michigan Power","url":"https://www.indianamichiganpower.com/"},
-      "gas": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
-      "note":"Likely serving utilities for screening only. Exact boundaries can vary by parcel; verify before diligence."
-    },
-    "Fort Wayne North": {
-      "power": {"name":"Indiana Michigan Power","url":"https://www.indianamichiganpower.com/"},
-      "gas": {"name":"NIPSCO","url":"https://www.nipsco.com/"},
-      "note":"Likely serving utilities for screening only. Exact boundaries can vary by parcel; verify before diligence."
-    },
-    "Lafayette East": {
-      "power": {"name":"Duke Energy Indiana","url":"https://www.duke-energy.com/home"},
-      "gas": {"name":"Verify local gas distribution territory","url":"https://www.in.gov/iurc/"},
-      "note":"Power candidate is for screening only. Gas service territory must be resolved for the exact parcel."
-    },
-    "Evansville North": {
-      "power": {"name":"CenterPoint Energy Indiana","url":"https://www.centerpointenergy.com/"},
-      "gas": {"name":"CenterPoint Energy Indiana","url":"https://www.centerpointenergy.com/"},
-      "note":"Likely serving utility for screening only. Verify the exact parcel/service address before using in diligence."
-    }
+    "Joliet South":{"power":{"name":"ComEd","url":"https://www.comed.com/"},"gas":{"name":"Nicor Gas","url":"https://www.nicorgas.com/"},"note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."},
+    "Elwood Logistics Belt":{"power":{"name":"ComEd","url":"https://www.comed.com/"},"gas":{"name":"Nicor Gas","url":"https://www.nicorgas.com/"},"note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."},
+    "Rockford East":{"power":{"name":"ComEd","url":"https://www.comed.com/"},"gas":{"name":"Nicor Gas","url":"https://www.nicorgas.com/"},"note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."},
+    "Decatur Industrial Core":{"power":{"name":"Ameren Illinois","url":"https://www.ameren.com/illinois"},"gas":{"name":"Ameren Illinois","url":"https://www.ameren.com/illinois"},"note":"Likely serving utility for screening only. Verify the exact parcel/service address and account territory before using in diligence."},
+    "Aurora West":{"power":{"name":"ComEd","url":"https://www.comed.com/"},"gas":{"name":"Nicor Gas","url":"https://www.nicorgas.com/"},"note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."},
+    "Kankakee North":{"power":{"name":"ComEd","url":"https://www.comed.com/"},"gas":{"name":"Nicor Gas","url":"https://www.nicorgas.com/"},"note":"Likely serving utilities for screening only. Verify the exact parcel/service address before using in diligence."},
+    "Burns Harbor West":{"power":{"name":"NIPSCO","url":"https://www.nipsco.com/"},"gas":{"name":"NIPSCO","url":"https://www.nipsco.com/"},"note":"Likely serving utility for screening only. Verify the exact parcel/service address before using in diligence."},
+    "Gary South":{"power":{"name":"NIPSCO","url":"https://www.nipsco.com/"},"gas":{"name":"NIPSCO","url":"https://www.nipsco.com/"},"note":"Likely serving utility for screening only. Verify the exact parcel/service address before using in diligence."},
+    "South Bend Tech Belt":{"power":{"name":"Indiana Michigan Power","url":"https://www.indianamichiganpower.com/"},"gas":{"name":"NIPSCO","url":"https://www.nipsco.com/"},"note":"Likely serving utilities for screening only. Exact boundaries can vary by parcel; verify before diligence."},
+    "Fort Wayne North":{"power":{"name":"Indiana Michigan Power","url":"https://www.indianamichiganpower.com/"},"gas":{"name":"NIPSCO","url":"https://www.nipsco.com/"},"note":"Likely serving utilities for screening only. Exact boundaries can vary by parcel; verify before diligence."},
+    "Lafayette East":{"power":{"name":"Duke Energy Indiana","url":"https://www.duke-energy.com/home"},"gas":{"name":"Verify local gas distribution territory","url":"https://www.in.gov/iurc/"},"note":"Power candidate is for screening only. Gas service territory must be resolved for the exact parcel."},
+    "Evansville North":{"power":{"name":"CenterPoint Energy Indiana","url":"https://www.centerpointenergy.com/"},"gas":{"name":"CenterPoint Energy Indiana","url":"https://www.centerpointenergy.com/"},"note":"Likely serving utility for screening only. Verify the exact parcel/service address before using in diligence."}
   }
 }
