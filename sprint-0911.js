@@ -17,6 +17,15 @@
     addEventListener('offline', syncNetwork);
 
     const draftIds = ['projectType','siteSelect','powerReq','waterReq','wasteReq','gasReq','fiberReq','timeline','powerRedundancy','risk','growth','capitalExposure'];
+    try {
+      const saved = JSON.parse(localStorage.getItem('gage-grid-project-draft-v1') || 'null');
+      if (saved?.draft && Date.now() - Number(saved.savedAt || 0) < 1000 * 60 * 60 * 24 * 14) {
+        draftIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el && saved.draft[id] !== undefined && saved.draft[id] !== '') el.value = saved.draft[id];
+        });
+      }
+    } catch {}
     const saveDraft = () => {
       const draft = Object.fromEntries(draftIds.map(id => [id, document.getElementById(id)?.value ?? '']));
       localStorage.setItem('gage-grid-project-draft-v1', JSON.stringify({ savedAt: Date.now(), draft }));
