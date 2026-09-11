@@ -30,3 +30,8 @@ body{font-feature-settings:"kern" 1,"tnum" 1}
 .result-top h3{font-size:31px;line-height:1.05}
 .result-top p{max-width:660px;line-height:1.6}
 .result-grid{margin:20px 0}.result-grid div{padding:14px}
+.rank-toolbar,.compare-toolbar,.registry-actions{padding:13px 0;gap:9px}
+.rank-row{padding:13px 14px;background:#fdfcf8;transition:border-color .15s ease,background .15s ease}
+.rank-row:hover{background:#fff;border-color:#9c998f}
+.compare-grid{box-shadow:0 8px 22px rgba(18,19,15,.05)}
+.compare-grid>div{padding:14px}
