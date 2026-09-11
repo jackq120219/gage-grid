@@ -5,3 +5,4 @@ a,button,input,select,summary{scroll-margin-top:110px}
 .results,.rank-row,.compare-grid,.site-card,.tablewrap{min-width:0}.results p,.rank-site,.compare-value,.site-card p,.note{overflow-wrap:anywhere}
 @media (max-width:620px){.field-row{grid-template-columns:1fr}.workbench{grid-template-columns:1fr}.inputs{border-right:0;border-bottom:1px solid var(--ink)}}
 .tablewrap,.comparison{overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
