@@ -45,6 +45,10 @@
         event.preventDefault();
         document.getElementById('regSearch')?.focus();
       }
+      if (event.key === 'Escape') {
+        const dialog = document.getElementById('recordDialog');
+        if (dialog?.open) dialog.close();
+      }
     });
   });
 })();
