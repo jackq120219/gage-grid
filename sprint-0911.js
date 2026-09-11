@@ -32,5 +32,11 @@
     };
     draftIds.forEach(id => document.getElementById(id)?.addEventListener('change', saveDraft));
     draftIds.forEach(id => document.getElementById(id)?.addEventListener('input', saveDraft));
+
+    const advanced = document.querySelector('details.advanced');
+    if (advanced) {
+      advanced.open = localStorage.getItem('gage-grid-advanced-open') === '1';
+      advanced.addEventListener('toggle', () => localStorage.setItem('gage-grid-advanced-open', advanced.open ? '1' : '0'));
+    }
   });
 })();
