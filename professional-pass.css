@@ -1,0 +1,4 @@
+/* Gage Grid professional UI refinement — Sep 11 2026 */
+:root{--gg-soft-shadow:0 14px 34px rgba(18,19,15,.08);--gg-radius:3px}
+body{font-feature-settings:"kern" 1,"tnum" 1}
+.section{scroll-margin-top:110px}
