@@ -13,3 +13,4 @@ a,button,input,select,summary{scroll-margin-top:110px}
 button:disabled,.smallbtn:disabled,.analyse:disabled{cursor:not-allowed;opacity:.45;filter:grayscale(.35)}
 dialog{max-width:min(900px,calc(100vw - 28px));max-height:calc(100dvh - 28px);overflow:auto}dialog::backdrop{background:rgba(18,19,15,.55);backdrop-filter:blur(2px)}
 .actions-row,.rank-actions,.site-card-actions,.hero-actions{align-items:stretch}.actions-row>*{flex:0 1 auto}@media(max-width:520px){.actions-row>*,.rank-actions>*,.site-card-actions>*{flex:1 1 100%}}
+.empty,.empty-panel{background:linear-gradient(135deg,rgba(255,255,255,.38),rgba(202,255,66,.06))}.empty b,.empty-panel b{letter-spacing:-.02em}
