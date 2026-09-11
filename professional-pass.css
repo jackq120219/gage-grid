@@ -44,3 +44,8 @@ body{font-feature-settings:"kern" 1,"tnum" 1}
 th{padding:11px 13px}td{padding:13px;line-height:1.45}
 tbody tr:nth-child(even){background:rgba(18,19,15,.018)}tbody tr:hover{background:#fffef9}
 .pill{white-space:nowrap}.headroom{font-size:13px}
+.methodgrid{gap:14px}.methodgrid article{padding:21px;background:rgba(251,250,246,.72)}
+.methodgrid article p{line-height:1.65}.saved-grid{gap:12px}
+.access-panel{padding:clamp(34px,4vw,52px);box-shadow:var(--gg-soft-shadow)}
+.access-panel h2{line-height:1}.access-panel p{max-width:590px;line-height:1.65}
+.access-form input,.access-form button{min-height:48px}
