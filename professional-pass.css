@@ -49,3 +49,11 @@ tbody tr:nth-child(even){background:rgba(18,19,15,.018)}tbody tr:hover{backgroun
 .access-panel{padding:clamp(34px,4vw,52px);box-shadow:var(--gg-soft-shadow)}
 .access-panel h2{line-height:1}.access-panel p{max-width:590px;line-height:1.65}
 .access-form input,.access-form button{min-height:48px}
+@media(max-width:700px){
+  .shell{width:min(100% - 28px,1240px)}.top{padding-inline:14px}.top nav{display:none}.access{font-size:9px}
+  .hero{padding-top:52px}.hero h1{font-size:clamp(48px,15vw,74px);line-height:.91}.hero-copy{grid-template-columns:1fr;gap:24px}.hero-stamp{max-width:none}
+  .mini-metrics{grid-template-columns:1fr 1fr;margin-bottom:64px}.mini-metrics div:nth-child(3){border-left:0;border-top:1px solid var(--line)}.mini-metrics div:nth-child(4){border-top:1px solid var(--line)}
+  .head{align-items:flex-start;flex-direction:column}.head p{max-width:100%}.section{margin-bottom:78px}
+  .inputs,.results{padding:20px}.result-top{grid-template-columns:1fr;justify-items:start}.score-ring{width:126px;height:126px}
+  .filters{grid-template-columns:1fr 1fr}.filters label:first-child{grid-column:1/-1}.clear{grid-column:1/-1}
+}
