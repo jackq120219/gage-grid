@@ -20,3 +20,8 @@ body{font-feature-settings:"kern" 1,"tnum" 1}
 .inputs,.results{padding:26px}
 .inputs h3{margin-bottom:20px;font-size:23px}
 .results{background:rgba(255,255,255,.18)}
+.field{gap:6px;margin-bottom:13px}.field label{font-size:8.5px;font-weight:700}
+.field input,.field select,.filters select,.filters input{min-height:43px;padding:11px 12px;border-color:#bbb7ad}
+.field input:hover,.field select:hover,.filters input:hover,.filters select:hover{border-color:#8f8c84}
+.analyse{height:50px;margin-top:10px;box-shadow:0 5px 0 rgba(18,19,15,.12)}
+.analyse:active{transform:translateY(2px);box-shadow:0 3px 0 rgba(18,19,15,.12)}
