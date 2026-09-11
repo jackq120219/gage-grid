@@ -9,3 +9,4 @@ a,button,input,select,summary{scroll-margin-top:110px}
 @media print{.ribbon,.top,.hero,.mini-metrics,.inputs,.access-panel,.footer,button{display:none!important}.shell{width:100%!important}.section{margin:0 0 28px!important}.workbench,.tablewrap{box-shadow:none!important;border-color:#888!important}.results{padding:0!important}body{background:#fff!important}}
 ::selection{background:var(--lime);color:var(--ink)}
 .top{box-shadow:0 1px 0 rgba(18,19,15,.08),0 8px 22px rgba(18,19,15,.045)}
+.field:focus-within label{color:var(--ink);font-weight:700}.field:focus-within .unit-input span{color:var(--ink)}
