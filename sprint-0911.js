@@ -12,5 +12,6 @@
     const accessForm=document.getElementById('accessForm');accessForm?.addEventListener('submit',()=>{const submit=accessForm.querySelector('button[type="submit"],button:not([type])');if(!submit)return;submit.disabled=true;submit.setAttribute('aria-busy','true');setTimeout(()=>{submit.disabled=false;submit.removeAttribute('aria-busy')},1400)});
     document.querySelectorAll('.inputs input[type="number"]').forEach(input=>{const syncValidity=()=>input.setAttribute('aria-invalid',input.checkValidity()?'false':'true');input.addEventListener('input',syncValidity);syncValidity()});
     const projectType=document.getElementById('projectType');const sharedProject=new URL(location.href).searchParams.get('project');if(projectType&&sharedProject&&[...projectType.options].some(o=>o.value===sharedProject))projectType.value=sharedProject;projectType?.addEventListener('change',()=>{const url=new URL(location.href);url.searchParams.set('project',projectType.value);history.replaceState(null,'',url)});
+    const siteSelect=document.getElementById('siteSelect');siteSelect?.addEventListener('change',()=>{const url=new URL(location.href);url.searchParams.set('site',siteSelect.value);history.replaceState(null,'',url)});
   });
 })();
