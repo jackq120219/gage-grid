@@ -58,5 +58,14 @@
       analyse.textContent = 'RUNNING SITE FEASIBILITY…';
       setTimeout(() => { analyse.removeAttribute('aria-busy'); analyse.textContent = original; }, 900);
     });
+
+    const accessForm = document.getElementById('accessForm');
+    accessForm?.addEventListener('submit', () => {
+      const submit = accessForm.querySelector('button[type="submit"],button:not([type])');
+      if (!submit) return;
+      submit.disabled = true;
+      submit.setAttribute('aria-busy','true');
+      setTimeout(() => { submit.disabled = false; submit.removeAttribute('aria-busy'); }, 1400);
+    });
   });
 })();
