@@ -35,3 +35,7 @@ body{font-feature-settings:"kern" 1,"tnum" 1}
 .rank-row:hover{background:#fff;border-color:#9c998f}
 .compare-grid{box-shadow:0 8px 22px rgba(18,19,15,.05)}
 .compare-grid>div{padding:14px}
+.portfolio{gap:16px}.site-card{padding:18px;box-shadow:0 5px 16px rgba(18,19,15,.035)}
+.site-card h3{margin:20px 0 8px;font-size:21px}.site-card p{min-height:48px;line-height:1.6}
+.site-card:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 rgba(18,19,15,.11)}
+.site-card-actions{margin-top:14px}
