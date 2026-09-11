@@ -12,3 +12,7 @@ body{font-feature-settings:"kern" 1,"tnum" 1}
 .hero p{max-width:760px;font-size:18px;line-height:1.58}
 .hero-stamp{max-width:360px;padding-left:18px}
 .hero-actions{margin-top:28px}
+.mini-metrics{margin-top:12px;margin-bottom:82px;background:rgba(251,250,246,.55)}
+.mini-metrics div{padding:18px 20px}
+.mini-metrics b{font-size:23px}
+.mini-metrics span{line-height:1.4}
