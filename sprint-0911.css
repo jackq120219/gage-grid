@@ -12,3 +12,4 @@ a,button,input,select,summary{scroll-margin-top:110px}
 .field:focus-within label{color:var(--ink);font-weight:700}.field:focus-within .unit-input span{color:var(--ink)}
 button:disabled,.smallbtn:disabled,.analyse:disabled{cursor:not-allowed;opacity:.45;filter:grayscale(.35)}
 dialog{max-width:min(900px,calc(100vw - 28px));max-height:calc(100dvh - 28px);overflow:auto}dialog::backdrop{background:rgba(18,19,15,.55);backdrop-filter:blur(2px)}
+.actions-row,.rank-actions,.site-card-actions,.hero-actions{align-items:stretch}.actions-row>*{flex:0 1 auto}@media(max-width:520px){.actions-row>*,.rank-actions>*,.site-card-actions>*{flex:1 1 100%}}
