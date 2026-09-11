@@ -6,3 +6,4 @@ a,button,input,select,summary{scroll-margin-top:110px}
 @media (max-width:620px){.field-row{grid-template-columns:1fr}.workbench{grid-template-columns:1fr}.inputs{border-right:0;border-bottom:1px solid var(--ink)}}
 .tablewrap,.comparison{overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media print{.ribbon,.top,.hero,.mini-metrics,.inputs,.access-panel,.footer,button{display:none!important}.shell{width:100%!important}.section{margin:0 0 28px!important}.workbench,.tablewrap{box-shadow:none!important;border-color:#888!important}.results{padding:0!important}body{background:#fff!important}}
