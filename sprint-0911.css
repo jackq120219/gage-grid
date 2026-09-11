@@ -2,3 +2,4 @@
 :focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 a,button,input,select,summary{scroll-margin-top:110px}
 @media (pointer:coarse){button,.btn,.smallbtn,.access,summary{min-height:44px}select,input{min-height:44px}}
+.results,.rank-row,.compare-grid,.site-card,.tablewrap{min-width:0}.results p,.rank-site,.compare-value,.site-card p,.note{overflow-wrap:anywhere}
