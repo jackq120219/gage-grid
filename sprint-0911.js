@@ -67,5 +67,11 @@
       submit.setAttribute('aria-busy','true');
       setTimeout(() => { submit.disabled = false; submit.removeAttribute('aria-busy'); }, 1400);
     });
+
+    document.querySelectorAll('.inputs input[type="number"]').forEach(input => {
+      const syncValidity = () => input.setAttribute('aria-invalid', input.checkValidity() ? 'false' : 'true');
+      input.addEventListener('input', syncValidity);
+      syncValidity();
+    });
   });
 })();
