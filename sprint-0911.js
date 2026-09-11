@@ -38,5 +38,13 @@
       advanced.open = localStorage.getItem('gage-grid-advanced-open') === '1';
       advanced.addEventListener('toggle', () => localStorage.setItem('gage-grid-advanced-open', advanced.open ? '1' : '0'));
     }
+
+    addEventListener('keydown', (event) => {
+      const tag = document.activeElement?.tagName;
+      if (event.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(tag)) {
+        event.preventDefault();
+        document.getElementById('regSearch')?.focus();
+      }
+    });
   });
 })();
