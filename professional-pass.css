@@ -39,3 +39,8 @@ body{font-feature-settings:"kern" 1,"tnum" 1}
 .site-card h3{margin:20px 0 8px;font-size:21px}.site-card p{min-height:48px;line-height:1.6}
 .site-card:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 rgba(18,19,15,.11)}
 .site-card-actions{margin-top:14px}
+.filters{gap:9px}.filters label{font-weight:700}.clear{min-height:43px;padding-inline:10px}
+.tablewrap{box-shadow:0 8px 24px rgba(18,19,15,.045)}
+th{padding:11px 13px}td{padding:13px;line-height:1.45}
+tbody tr:nth-child(even){background:rgba(18,19,15,.018)}tbody tr:hover{background:#fffef9}
+.pill{white-space:nowrap}.headroom{font-size:13px}
