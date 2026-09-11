@@ -50,5 +50,13 @@
         if (dialog?.open) dialog.close();
       }
     });
+
+    const analyse = document.getElementById('analyseBtn');
+    analyse?.addEventListener('click', () => {
+      const original = analyse.textContent;
+      analyse.setAttribute('aria-busy','true');
+      analyse.textContent = 'RUNNING SITE FEASIBILITY…';
+      setTimeout(() => { analyse.removeAttribute('aria-busy'); analyse.textContent = original; }, 900);
+    });
   });
 })();
