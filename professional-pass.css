@@ -25,3 +25,8 @@ body{font-feature-settings:"kern" 1,"tnum" 1}
 .field input:hover,.field select:hover,.filters input:hover,.filters select:hover{border-color:#8f8c84}
 .analyse{height:50px;margin-top:10px;box-shadow:0 5px 0 rgba(18,19,15,.12)}
 .analyse:active{transform:translateY(2px);box-shadow:0 3px 0 rgba(18,19,15,.12)}
+.result-top{grid-template-columns:154px 1fr;gap:24px;padding-bottom:22px}
+.score-ring{width:140px;height:140px}.score-inner b{font-size:39px}
+.result-top h3{font-size:31px;line-height:1.05}
+.result-top p{max-width:660px;line-height:1.6}
+.result-grid{margin:20px 0}.result-grid div{padding:14px}
