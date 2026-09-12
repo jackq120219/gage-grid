@@ -20,3 +20,8 @@ dialog{max-width:min(900px,calc(100vw - 28px));max-height:calc(100dvh - 28px);ov
 @media (forced-colors:active){.dot,.mark i,.bar i,.fitbar i{forced-color-adjust:auto}.verdict,.pill,.btn,.smallbtn{border:1px solid ButtonText}}
 @supports (content-visibility:auto){#rank,#compare,#sites,#registry,#changes,#method,.saved-section{content-visibility:auto;contain-intrinsic-size:900px}}
 @media (min-width:701px) and (max-width:1040px){.top nav{max-width:58vw;overflow-x:auto;white-space:nowrap;scrollbar-width:thin;padding:10px 0}}
+
+/* Operating-company finish. */
+.footer [data-qc-owner]{color:var(--ink);font-weight:800;text-decoration:none;border-bottom:1px solid rgba(18,19,15,.32);padding-bottom:2px}
+.footer [data-qc-owner]:hover{color:var(--orange);border-color:var(--orange)}
+.top nav{gap:clamp(20px,2vw,30px)}
