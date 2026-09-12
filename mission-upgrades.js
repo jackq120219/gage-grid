@@ -12,4 +12,5 @@
   let featureIndex=0;function loadNext(){if(featureIndex>=featureFiles.length)return;const file=featureFiles[featureIndex++];if(document.querySelector(`script[data-gg-upgrade="${file}"]`)){loadNext();return}const script=document.createElement('script');script.src=`/upgrades/${file}`;script.dataset.ggUpgrade=file;script.onload=loadNext;script.onerror=loadNext;document.head.appendChild(script)}loadNext();
   if(!document.querySelector('script[data-gg-diligence-path]')){const script=document.createElement('script');script.src='/diligence-path.js';script.dataset.ggDiligencePath='true';document.body.appendChild(script)}
   if(!document.querySelector('script[data-gg-project-morph]')){const script=document.createElement('script');script.src='/upgrades/55-project-morph.js';script.dataset.ggProjectMorph='true';document.body.appendChild(script)}
+  if(!document.querySelector('script[data-gg-capacity-frontier]')){const script=document.createElement('script');script.src='/upgrades/56-capacity-frontier.js';script.dataset.ggCapacityFrontier='true';document.body.appendChild(script)}
 })();
