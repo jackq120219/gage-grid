@@ -11,4 +11,5 @@
   [...featureFiles,...downstreamFiles].forEach(file=>{if(document.querySelector(`link[data-gg-preload="${file}"]`))return;const link=document.createElement('link');link.rel='preload';link.as='script';link.href=`/upgrades/${file}`;link.dataset.ggPreload=file;document.head.appendChild(link)});
   let featureIndex=0;function loadNext(){if(featureIndex>=featureFiles.length)return;const file=featureFiles[featureIndex++];if(document.querySelector(`script[data-gg-upgrade="${file}"]`)){loadNext();return}const script=document.createElement('script');script.src=`/upgrades/${file}`;script.dataset.ggUpgrade=file;script.onload=loadNext;script.onerror=loadNext;document.head.appendChild(script)}loadNext();
   if(!document.querySelector('script[data-gg-diligence-path]')){const script=document.createElement('script');script.src='/diligence-path.js';script.dataset.ggDiligencePath='true';document.body.appendChild(script)}
+  if(!document.querySelector('script[data-gg-project-morph]')){const script=document.createElement('script');script.src='/upgrades/55-project-morph.js';script.dataset.ggProjectMorph='true';document.body.appendChild(script)}
 })();
