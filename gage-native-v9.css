@@ -1515,3 +1515,15 @@ dialog{
   .gg10-step-title,.gg10-step-copy{grid-column:2}
   .gg10-break-stats{grid-template-columns:1fr}
 }
+
+.gg10-workflow-action{
+  width:100%;
+  min-height:35px;
+  margin-top:13px;
+  border:1px solid var(--gg-ink);
+  background:var(--gg-blue);
+  color:#fff;
+  font:800 7px var(--gg-mono);
+  cursor:pointer;
+}
+.gg10-workflow-action:hover{background:#153f77}
