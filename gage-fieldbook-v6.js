@@ -6,7 +6,7 @@
   var esc=function(v){return String(v==null?'':v).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]})};
 
   function keepFinalCssLast(){
-    var link=q('link[href="/gage-fieldbook-v6.css"]');
+    var link=q('link[href="/gage-fieldbook-v7.css"]')||q('link[href="/gage-fieldbook-v6.css"]');
     if(!link)return;
     var moving=false;
     var head=document.head;
