@@ -19,7 +19,8 @@ const ageMinutes=value=>{const t=new Date(value).getTime();return Number.isFinit
 const freshness=mins=>mins==null?'unknown':mins<=180?'current':mins<=1440?'aging':'stale';
 module.exports=async function handler(req,res){
   res.setHeader('Cache-Control','s-maxage=900, stale-while-revalidate=3600');
-  const requestUrl=new URL(req.url,`https://${req.headers.host||'gage-grid.vercel.app'}`);\n  const id=String(requestUrl.searchParams.get('site')||'').trim(),node=nodes[id];
+  const requestUrl=new URL(req.url,`https://${req.headers.host||'gage-grid.vercel.app'}`);
+  const id=String(requestUrl.searchParams.get('site')||'').trim(),node=nodes[id];
   if(!node)return res.status(400).json({ok:false,error:'Unknown pilot site'});
   const url=`https://waterservices.usgs.gov/nwis/iv/?format=json&sites=${encodeURIComponent(node.gauge)}&parameterCd=00060&siteStatus=all`;
   try{
