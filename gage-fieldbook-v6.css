@@ -1,0 +1,270 @@
+/* Gage Grid V6 — final fieldbook refinement
+   High-contrast engineering atlas. No dark-SaaS bands, no washed-out hero copy. */
+
+body.gg-survey.gg-fieldbook{
+  --gg6-ink:#1c2a34;
+  --gg6-muted:#566670;
+  --gg6-blue:#1d4f91;
+  --gg6-blue-2:#2f6db2;
+  --gg6-orange:#f0642d;
+  --gg6-paper:#f4f6f3;
+  --gg6-sheet:#fbfcfa;
+  --gg6-line:#aeb9c0;
+  --gg6-line-soft:#d5dde1;
+  color:var(--gg6-ink)!important;
+}
+
+/* HERO — readable first, dramatic second */
+body.gg-survey.gg-fieldbook .hero{
+  min-height:690px!important;
+  align-items:center!important;
+}
+body.gg-survey.gg-fieldbook .hero h1{
+  color:#22313d!important;
+  opacity:1!important;
+  text-shadow:none!important;
+  -webkit-text-fill-color:currentColor!important;
+  font-size:clamp(58px,6.2vw,96px)!important;
+  line-height:.9!important;
+}
+body.gg-survey.gg-fieldbook .hero h1 em{
+  color:var(--gg6-blue)!important;
+  -webkit-text-fill-color:var(--gg6-blue)!important;
+  text-decoration-color:var(--gg6-orange)!important;
+  text-decoration-thickness:7px!important;
+}
+body.gg-survey.gg-fieldbook .hero-copy>p{
+  max-width:650px!important;
+  color:#43535e!important;
+  font-size:15px!important;
+  line-height:1.72!important;
+}
+body.gg-survey.gg-fieldbook .hero-stamp{
+  max-width:520px!important;
+  color:#4e5f69!important;
+  border-color:#8c9aa3!important;
+  border-left:6px solid var(--gg6-blue)!important;
+  background:#fbfcfa!important;
+  box-shadow:5px 5px 0 rgba(29,79,145,.07)!important;
+}
+body.gg-survey.gg-fieldbook .hero-stamp b{color:var(--gg6-blue)!important}
+body.gg-survey.gg-fieldbook .hero-actions{display:flex!important;gap:8px!important;flex-wrap:wrap!important}
+body.gg-survey.gg-fieldbook .hero-actions .btn{
+  opacity:1!important;
+  border:1px solid #21303a!important;
+  min-height:43px!important;
+}
+body.gg-survey.gg-fieldbook .hero-actions .btn:first-child{
+  background:var(--gg6-blue)!important;color:#fff!important;
+}
+body.gg-survey.gg-fieldbook .hero-actions .btn.ghost{
+  background:#fff!important;color:#22313d!important;
+}
+body.gg-survey.gg-fieldbook .gg5-site-sheet{display:none!important}
+body.gg-survey.gg-fieldbook .gg-os-hero-field{
+  height:585px!important;
+  box-shadow:10px 10px 0 rgba(29,79,145,.07)!important;
+}
+
+/* Left rail / runway remain Gage-specific but stronger. */
+body.gg-survey.gg-fieldbook .gg-os-rail{background:rgba(248,250,249,.97)!important}
+body.gg-survey.gg-fieldbook .gg-os-rail nav a{color:#53646f!important}
+body.gg-survey.gg-fieldbook .gg-os-rail nav a b{color:#4f606a!important}
+body.gg-survey.gg-fieldbook .gg-os-rail nav a.active b{color:#172631!important}
+body.gg-survey.gg-fieldbook .gg-os-runway{opacity:.88!important}
+body.gg-survey.gg-fieldbook .gg-os-runway-status b,
+body.gg-survey.gg-fieldbook .gg-os-runway-track li span{color:#5a6b75!important}
+
+/* Guided start — fix the washed-out text and make choices usable. */
+body.gg-survey.gg-fieldbook .ggp-guided .head h2,
+body.gg-survey.gg-fieldbook .ggp-preference .head h2{
+  color:#23323d!important;
+  opacity:1!important;
+  -webkit-text-fill-color:#23323d!important;
+}
+body.gg-survey.gg-fieldbook .ggp-guided .head p,
+body.gg-survey.gg-fieldbook .ggp-preference .head p{color:#53636d!important}
+body.gg-survey.gg-fieldbook .ggp-paths{gap:12px!important}
+body.gg-survey.gg-fieldbook .ggp-paths button{
+  min-height:112px!important;
+  border:1px solid #9caab2!important;
+  background:#fff!important;
+  color:#25343e!important;
+  box-shadow:5px 5px 0 rgba(24,33,42,.06)!important;
+}
+body.gg-survey.gg-fieldbook .ggp-paths button:hover{
+  border-color:var(--gg6-blue)!important;
+  background:#eef4fa!important;
+}
+body.gg-survey.gg-fieldbook .ggp-paths button span{color:var(--gg6-orange)!important}
+body.gg-survey.gg-fieldbook .ggp-paths button b{color:#20303a!important}
+body.gg-survey.gg-fieldbook .ggp-paths button small{color:#697881!important}
+body.gg-survey.gg-fieldbook .ggp-project-chips button{
+  border-color:#acb7bd!important;
+  background:#fff!important;
+  color:#53636d!important;
+}
+body.gg-survey.gg-fieldbook .ggp-project-chips button.active{
+  border-color:var(--gg6-blue)!important;
+  background:#e7f0f9!important;
+  color:var(--gg6-blue)!important;
+}
+
+/* Project command rail / field notes */
+body.gg-survey.gg-fieldbook .gg5-project-rail{
+  border-color:#8998a1!important;
+  box-shadow:7px 7px 0 rgba(29,79,145,.06)!important;
+}
+body.gg-survey.gg-fieldbook .gg5-rail-head strong{color:#263741!important}
+body.gg-survey.gg-fieldbook .gg5-presets button{color:#53636d!important}
+
+/* WORKED SCREEN — intentionally light and editorial. */
+.gg6-worked{
+  margin:32px auto 58px!important;
+  width:min(1320px,calc(100% - 64px))!important;
+  border:1px solid #8797a0!important;
+  background:
+    linear-gradient(rgba(29,79,145,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(29,79,145,.035) 1px,transparent 1px),
+    #fbfcfa!important;
+  background-size:28px 28px,28px 28px,auto!important;
+  color:#1e2d37!important;
+  box-shadow:9px 9px 0 rgba(24,33,42,.07)!important;
+}
+.gg6-worked-head{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;
+  padding:22px 24px;border-bottom:1px solid #9ba8af;background:rgba(239,243,246,.92)
+}
+.gg6-worked-kicker,.gg6-worked-card>span,.gg6-worked-foot b{
+  font:800 7px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em
+}
+.gg6-worked-kicker{color:var(--gg6-orange)}
+.gg6-worked-head h2{
+  margin:8px 0 6px;color:#20303b!important;
+  font:400 clamp(30px,4vw,48px)/.98 Georgia,serif!important;
+  letter-spacing:-.04em!important;text-transform:none!important
+}
+.gg6-worked-head p{margin:0;max-width:780px;color:#55656f;font-size:11px;line-height:1.6}
+.gg6-worked-run{
+  min-height:42px;padding:0 15px;border:1px solid #1b2a34;background:var(--gg6-blue);color:#fff;
+  font:800 8px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;cursor:pointer;
+  box-shadow:4px 4px 0 #1b2a34
+}
+.gg6-worked-run:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #1b2a34}
+.gg6-worked-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#b7c1c7}
+.gg6-worked-card{min-height:150px;padding:17px;background:#fff}
+.gg6-worked-card>span{color:#6f7d85}
+.gg6-worked-card strong{display:block;margin-top:10px;color:#1d2d37;font-size:16px;line-height:1.12}
+.gg6-worked-card p{margin:7px 0 0;color:#687780;font-size:9px;line-height:1.55}
+.gg6-worked-card.decision{border-top:4px solid var(--gg6-orange)}
+.gg6-worked-card.context{border-top:4px solid #7aa4d3}
+.gg6-worked-card.project{border-top:4px solid var(--gg6-blue)}
+.gg6-worked-foot{
+  display:flex;align-items:center;gap:12px;padding:11px 15px;border-top:1px solid #9ba8af;background:#eef2f4
+}
+.gg6-worked-foot b{color:var(--gg6-blue)}
+.gg6-worked-foot span{color:#5e6d76;font-size:9px;line-height:1.45}
+
+/* Decision gate — remove the old black SaaS band. */
+body.gg-survey.gg-fieldbook .ggx-gate{
+  border:2px solid #1d2b35!important;
+  background:#fbfcfa!important;
+  color:#20303a!important;
+  box-shadow:8px 8px 0 rgba(24,33,42,.07)!important
+}
+body.gg-survey.gg-fieldbook .ggx-gate-head{
+  background:#edf2f5!important;
+  border-bottom:1px solid #1d2b35!important
+}
+body.gg-survey.gg-fieldbook .ggx-gate-head span,
+body.gg-survey.gg-fieldbook .ggx-proof span{color:var(--gg6-blue)!important}
+body.gg-survey.gg-fieldbook .ggx-gate-head h2{color:#20303a!important;text-transform:none!important}
+body.gg-survey.gg-fieldbook .ggx-gate-head p,
+body.gg-survey.gg-fieldbook .ggx-gate-grid p,
+body.gg-survey.gg-fieldbook .ggx-switch p,
+body.gg-survey.gg-fieldbook .ggx-proof p{color:#5d6c75!important}
+body.gg-survey.gg-fieldbook .ggx-gate-score strong{color:#20303a!important}
+body.gg-survey.gg-fieldbook .ggx-gate-grid{border-color:#aeb9c0!important;background:#aeb9c0!important}
+body.gg-survey.gg-fieldbook .ggx-gate-grid article{background:#fff!important;border-color:#c2cbd0!important}
+body.gg-survey.gg-fieldbook .ggx-gate-grid strong{color:#20303a!important}
+body.gg-survey.gg-fieldbook .ggx-switch{background:#f1f4f5!important;border-color:#aeb9c0!important}
+body.gg-survey.gg-fieldbook .ggx-switch strong{color:#20303a!important}
+body.gg-survey.gg-fieldbook .ggx-proof{background:#fff!important}
+body.gg-survey.gg-fieldbook .ggx-proof>div{background:#fff!important;border-color:#c9d1d5!important}
+body.gg-survey.gg-fieldbook .ggx-proof ol{color:#44545e!important}
+
+/* Project Intelligence V2 — keep the useful data, lose the foreign dark skin. */
+body.gg-survey.gg-fieldbook .gg-v2-intel{
+  border:1px solid #9eabb2!important;border-top:4px solid var(--gg6-blue)!important;
+  background:#fff!important;color:#23333d!important
+}
+body.gg-survey.gg-fieldbook .gg-v2-head,
+body.gg-survey.gg-fieldbook .gg-v2-live,
+body.gg-survey.gg-fieldbook .gg-v2-utilities,
+body.gg-survey.gg-fieldbook .gg-v2-evidence{background:#fff!important;border-color:#c4cdd2!important}
+body.gg-survey.gg-fieldbook .gg-v2-head{background:#edf2f5!important}
+body.gg-survey.gg-fieldbook .gg-v2-head span,
+body.gg-survey.gg-fieldbook .gg-v2-live span,
+body.gg-survey.gg-fieldbook .gg-v2-utilities span,
+body.gg-survey.gg-fieldbook .gg-v2-subhead span{color:var(--gg6-blue)!important}
+body.gg-survey.gg-fieldbook .gg-v2-head h3,
+body.gg-survey.gg-fieldbook .gg-v2-live h4,
+body.gg-survey.gg-fieldbook .gg-v2-utilities b{color:#20303a!important}
+body.gg-survey.gg-fieldbook .gg-v2-head small,
+body.gg-survey.gg-fieldbook .gg-v2-live small,
+body.gg-survey.gg-fieldbook .gg-v2-live p,
+body.gg-survey.gg-fieldbook .gg-v2-utilities small{color:#63727b!important}
+body.gg-survey.gg-fieldbook .gg-v2-capital{background:#c2cbd0!important}
+body.gg-survey.gg-fieldbook .gg-v2-capital article{background:#f8faf9!important}
+body.gg-survey.gg-fieldbook .gg-v2-capital span{color:#6b7880!important}
+body.gg-survey.gg-fieldbook .gg-v2-capital b{color:var(--gg6-blue)!important}
+body.gg-survey.gg-fieldbook .gg-v2-tablewrap th{background:#e8edf0!important;color:#566670!important;border-color:#c3ccd1!important}
+body.gg-survey.gg-fieldbook .gg-v2-tablewrap td{background:#fff!important;color:#53636d!important;border-color:#d3dadd!important}
+
+/* Small legacy dark patches. */
+body.gg-survey.gg-fieldbook .gg-risk-explain{
+  border:1px solid #aeb9c0!important;background:#f4f7f8!important
+}
+body.gg-survey.gg-fieldbook .gg-risk-explain>span{color:var(--gg6-blue)!important}
+body.gg-survey.gg-fieldbook .gg-risk-explain b{background:#e7edf1!important;color:#263741!important}
+body.gg-survey.gg-fieldbook .gg-risk-explain small{color:#61717a!important}
+body.gg-survey.gg-fieldbook .ggx-brief{
+  border-color:#9eabb2!important;background:#f4f7f8!important
+}
+body.gg-survey.gg-fieldbook .ggx-brief-kicker,
+body.gg-survey.gg-fieldbook .ggx-coverage b{color:var(--gg6-blue)!important}
+body.gg-survey.gg-fieldbook .ggx-brief textarea{
+  background:#fff!important;color:#22313b!important;border-color:#9eabb2!important
+}
+body.gg-survey.gg-fieldbook .ggx-brief small{color:#61717a!important}
+body.gg-survey.gg-fieldbook .ggx-brief-actions button{
+  background:#fff!important;color:#263741!important;border-color:#8e9ba3!important
+}
+body.gg-survey.gg-fieldbook .ggx-brief-actions button:last-child{
+  background:var(--gg6-blue)!important;color:#fff!important;border-color:var(--gg6-blue)!important
+}
+body.gg-survey.gg-fieldbook .ggx-coverage{border-color:#c3ccd1!important}
+body.gg-survey.gg-fieldbook .ggx-coverage-track{background:#d9e0e4!important}
+body.gg-survey.gg-fieldbook .ggx-coverage-track i{background:var(--gg6-orange)!important}
+
+/* General legibility */
+body.gg-survey.gg-fieldbook .head h2,
+body.gg-survey.gg-fieldbook .split-copy h2,
+body.gg-survey.gg-fieldbook .method h2{color:#22313b!important;opacity:1!important}
+body.gg-survey.gg-fieldbook .head p,
+body.gg-survey.gg-fieldbook .split-copy p{color:#566670!important}
+body.gg-survey.gg-fieldbook .kicker{color:var(--gg6-blue)!important}
+body.gg-survey.gg-fieldbook .note{color:#596971!important}
+
+@media(max-width:900px){
+  .gg6-worked{width:min(100% - 30px,1320px)!important}
+  .gg6-worked-grid{grid-template-columns:1fr 1fr}
+  .gg6-worked-head{grid-template-columns:1fr}
+  .gg6-worked-run{width:100%}
+}
+@media(max-width:620px){
+  body.gg-survey.gg-fieldbook .hero h1{font-size:47px!important}
+  .gg6-worked{width:calc(100% - 18px)!important}
+  .gg6-worked-grid{grid-template-columns:1fr}
+  .gg6-worked-foot{align-items:flex-start;flex-direction:column}
+}
