@@ -1,0 +1,354 @@
+/* Gage Grid V7 — native instrument layer
+   Distinct from ExpenseIntel/Waterline: technical paper, survey rails,
+   mechanical thresholds, editorial serif, signal-orange actions. */
+
+body.gg-survey.gg-fieldbook{
+  --v7-ink:#1d2c36;
+  --v7-blue:#1d4f91;
+  --v7-blue-soft:#e7eff7;
+  --v7-orange:#ef642f;
+  --v7-paper:#f5f7f4;
+  --v7-sheet:#fbfcfa;
+  --v7-line:#aeb9bf;
+  --v7-line-soft:#d6dde1;
+}
+
+/* PROJECT MORPH — make it a live project tuner, not a dark analytics console. */
+body.gg-survey.gg-fieldbook .ggx-morph-console{
+  display:grid!important;
+  grid-template-columns:320px minmax(0,1fr)!important;
+  border:2px solid var(--v7-ink)!important;
+  background:var(--v7-sheet)!important;
+  box-shadow:8px 8px 0 rgba(29,44,54,.07)!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-controls{
+  padding:19px!important;
+  border-right:1px solid var(--v7-ink)!important;
+  background:
+    linear-gradient(rgba(29,79,145,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(29,79,145,.035) 1px,transparent 1px),
+    #eef3f6!important;
+  background-size:22px 22px,22px 22px,auto!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-controls label>span{
+  color:#5b6a73!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-controls label b{
+  color:var(--v7-blue)!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-controls input{
+  accent-color:var(--v7-orange)!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-actions button{
+  border:1px solid var(--v7-ink)!important;
+  background:#fff!important;
+  color:#2a3943!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-actions button.primary{
+  background:var(--v7-blue)!important;
+  color:#fff!important;
+  border-color:var(--v7-blue)!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-controls>p{
+  color:#61717a!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-main{
+  background:#fbfcfa!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-summary{
+  border-bottom:1px solid var(--v7-ink)!important;
+  background:#edf2f5!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-summary div{
+  border-right:1px solid #b6c0c6!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-summary span{
+  color:#697780!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-summary b{
+  color:#20313b!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-rows{
+  background:#eef1ed!important;
+  gap:6px!important;
+  padding:10px!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-row{
+  grid-template-columns:42px 180px minmax(0,1fr) 120px!important;
+  min-height:74px!important;
+  border:1px solid #c0c9ce!important;
+  background:#fff!important;
+  padding:11px 13px!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-row[data-top="true"]{
+  border-color:#7d9fbd!important;
+  box-shadow:inset 4px 0 0 var(--v7-blue)!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-rank{
+  color:#829099!important;
+  font-family:Georgia,serif!important;
+  font-weight:400!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-row[data-top="true"] .ggx-morph-rank{
+  color:var(--v7-orange)!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-site b,
+body.gg-survey.gg-fieldbook .ggx-morph-meta b{
+  color:#22333d!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-site span,
+body.gg-survey.gg-fieldbook .ggx-morph-detail{
+  color:#687780!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-bar{
+  position:relative!important;
+  height:12px!important;
+  background:
+    repeating-linear-gradient(90deg,#c5ced3 0 1px,transparent 1px 20%),
+    #edf1f2!important;
+  overflow:visible!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-bar:before{
+  content:"";
+  position:absolute;left:0;top:5px;right:0;height:2px;background:#9ba8af;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-bar i{
+  position:relative!important;
+  height:4px!important;
+  top:4px!important;
+  background:var(--v7-blue)!important;
+  transition:width .26s cubic-bezier(.2,.75,.25,1)!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-bar i:after{
+  content:"";
+  position:absolute;right:-4px;top:-3px;width:8px;height:8px;
+  border:2px solid var(--v7-blue);border-radius:50%;background:#fff;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-meta span[data-verdict="hold"]{color:#b34c3f!important}
+body.gg-survey.gg-fieldbook .ggx-morph-meta span[data-verdict="conditional"]{color:#8d6b22!important}
+body.gg-survey.gg-fieldbook .ggx-morph-meta span[data-verdict="go"]{color:#397153!important}
+body.gg-survey.gg-fieldbook .ggx-morph-rule{
+  border-top:1px solid #aeb8be!important;
+  background:#eef3f6!important;
+  color:#5e6d76!important;
+}
+body.gg-survey.gg-fieldbook .ggx-morph-rule b{
+  color:var(--v7-orange)!important;
+}
+
+/* DILIGENCE BUDGET — allocation sheet, not trading-dashboard bars. */
+body.gg-survey.gg-fieldbook .ggxb-console{
+  display:grid!important;
+  grid-template-columns:300px minmax(0,1fr)!important;
+  border:2px solid var(--v7-ink)!important;
+  background:#fbfcfa!important;
+  box-shadow:8px 8px 0 rgba(29,44,54,.07)!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-console>aside{
+  padding:19px!important;
+  border-right:1px solid var(--v7-ink)!important;
+  background:#eef3f6!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-console label,
+body.gg-survey.gg-fieldbook .ggxb-presets>span{
+  color:#60717a!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-console input,
+body.gg-survey.gg-fieldbook .ggxb-console select{
+  border:1px solid #929fa7!important;
+  background:#fff!important;
+  color:#20303a!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-console input:focus,
+body.gg-survey.gg-fieldbook .ggxb-console select:focus{
+  border-color:var(--v7-blue)!important;
+  box-shadow:inset 4px 0 0 var(--v7-blue)!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-console>aside>button{
+  border:1px solid var(--v7-ink)!important;
+  background:var(--v7-orange)!important;
+  color:#fff!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-console aside p{
+  color:#64737b!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-presets button{
+  border:1px solid #a5b0b6!important;
+  background:#fff!important;
+  color:#56666f!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-presets button:hover{
+  border-color:var(--v7-blue)!important;
+  color:var(--v7-blue)!important;
+  background:#e7eff7!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-summary{
+  border-bottom:1px solid var(--v7-ink)!important;
+  background:#edf2f5!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-summary div{
+  border-right:1px solid #b7c1c6!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-summary span,
+body.gg-survey.gg-fieldbook .ggxb-row span,
+body.gg-survey.gg-fieldbook .ggxb-next span{
+  color:#687780!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-summary b{
+  color:#22323c!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-rows{
+  display:grid!important;
+  gap:6px!important;
+  padding:10px!important;
+  background:#eef1ed!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-row{
+  grid-template-columns:128px minmax(0,1fr) 110px!important;
+  min-height:68px!important;
+  padding:11px 13px!important;
+  border:1px solid #c1cacf!important;
+  background:#fff!important;
+  cursor:pointer!important;
+  transition:border-color .14s,transform .14s!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-row:hover{
+  border-color:#7c9db9!important;
+  transform:translateX(2px)!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-row strong,
+body.gg-survey.gg-fieldbook .ggxb-row b{
+  color:#24343e!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-bar{
+  position:relative!important;
+  height:12px!important;
+  background:
+    repeating-linear-gradient(90deg,#c6ced2 0 1px,transparent 1px 20%),
+    #eef2f3!important;
+  overflow:visible!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-bar:before{
+  content:"";position:absolute;left:0;right:0;top:5px;height:2px;background:#9aa7ae;
+}
+body.gg-survey.gg-fieldbook .ggxb-bar i{
+  position:relative!important;
+  top:4px!important;height:4px!important;
+  background:var(--v7-orange)!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-bar i:after{
+  content:"";position:absolute;right:-4px;top:-3px;width:8px;height:8px;border:2px solid var(--v7-orange);border-radius:50%;background:#fff;
+}
+body.gg-survey.gg-fieldbook .ggxb-row small{
+  color:#677680!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-next{
+  border-top:1px solid var(--v7-ink)!important;
+  background:#edf2f5!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-next strong{
+  color:var(--v7-blue)!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-next p{
+  color:#61717a!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-next button{
+  border:1px solid var(--v7-ink)!important;
+  background:#fff!important;
+  color:#25353f!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-next button:hover{
+  background:#e7eff7!important;color:var(--v7-blue)!important;
+}
+
+/* Structural section transitions — subtle, physical, not flashy. */
+body.gg-v7 .section.ggv7-reveal{
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity .48s ease,transform .48s cubic-bezier(.2,.72,.24,1);
+}
+body.gg-v7 .section.ggv7-reveal.is-visible{
+  opacity:1;
+  transform:none;
+}
+body.gg-v7 .section>.head{
+  position:relative!important;
+}
+body.gg-v7 .section>.head:after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-13px;
+  width:min(220px,28vw);
+  height:1px;
+  background:linear-gradient(90deg,var(--v7-orange),var(--v7-blue),transparent);
+}
+body.gg-v7 .section>.head:before{
+  content:"";
+  position:absolute;
+  left:0;bottom:-16px;
+  width:7px;height:7px;border-radius:50%;
+  background:var(--v7-orange);
+  animation:ggv7HeaderSignal 4.8s ease-in-out infinite;
+}
+@keyframes ggv7HeaderSignal{
+  0%,100%{transform:translateX(0);opacity:.45}
+  45%,55%{opacity:1}
+  50%{transform:translateX(min(210px,26vw))}
+}
+
+/* Focus mode for native instrument modules. */
+body.gg-v7 .ggx-frontier-v7.ggv7-focus .ggf7-rail:not(.active){
+  opacity:.46;
+}
+body.gg-v7 .ggx-frontier-v7 .ggf7-rail{
+  transition:opacity .18s,background .18s;
+}
+
+/* Make miscellaneous injected lower-page modules obey the fieldbook palette. */
+body.gg-survey.gg-fieldbook .gg-capital-gate,
+body.gg-survey.gg-fieldbook .gg-confidence-floor,
+body.gg-survey.gg-fieldbook .gg-shortlist-reason{
+  border-color:#a6b1b7!important;
+  background:#fbfcfa!important;
+  box-shadow:4px 4px 0 rgba(29,44,54,.05)!important;
+}
+body.gg-survey.gg-fieldbook .gg-capital-gate>div:first-child span,
+body.gg-survey.gg-fieldbook .gg-confidence-floor>span,
+body.gg-survey.gg-fieldbook .gg-shortlist-reason>div:first-child span{
+  color:var(--v7-orange)!important;
+}
+body.gg-survey.gg-fieldbook .gg-cg-metrics article,
+body.gg-survey.gg-fieldbook .gg-sr-grid article{
+  background:#f2f5f6!important;
+  border-color:#cbd3d7!important;
+}
+body.gg-survey.gg-fieldbook .gg-sr-grid article>span{
+  color:var(--v7-blue)!important;
+}
+
+@media(max-width:920px){
+  body.gg-survey.gg-fieldbook .ggx-morph-console,
+  body.gg-survey.gg-fieldbook .ggxb-console{
+    grid-template-columns:1fr!important;
+  }
+  body.gg-survey.gg-fieldbook .ggx-morph-controls,
+  body.gg-survey.gg-fieldbook .ggxb-console>aside{
+    border-right:0!important;
+    border-bottom:1px solid var(--v7-ink)!important;
+  }
+}
+@media(max-width:620px){
+  body.gg-survey.gg-fieldbook .ggx-morph-row{
+    grid-template-columns:34px 1fr 92px!important;
+  }
+  body.gg-survey.gg-fieldbook .ggx-morph-bar{
+    grid-column:2/4!important;
+  }
+  body.gg-survey.gg-fieldbook .ggxb-row{
+    grid-template-columns:88px minmax(0,1fr) 82px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body.gg-v7 .section.ggv7-reveal{opacity:1!important;transform:none!important;transition:none!important}
+  body.gg-v7 .section>.head:before{animation:none!important}
+}
