@@ -167,7 +167,7 @@
     byId('gg8Verdict').textContent=a.verdict;
     byId('gg8Score').textContent=a.low+'–'+a.high;
     byId('gg8Bottleneck').textContent=a.worst.name+' · '+Math.round(a.worst.ratio*100)+'%';
-    byId('gg8ModeLabel').textContent=stressName();
+    byId('gg8ModeLabel').textContent=stressName();\n    byId('gg8ModeLabel2').textContent=stressName();\n    var lab=byId(LAB_ID);if(lab)lab.setAttribute('data-state',a.vclass);
     byId('gg8ProjectLabel').textContent=projectLabel(req);
 
     renderSvg(a,req,site);
@@ -216,7 +216,7 @@
   function pushToBreak(){
     var base=baseReq(),site=baseSite();if(!base||!site)return;
     var limit=breakMultiplier(site,base);
-    multiplier=Math.min(2.2,Math.max(.6,limit));
+    multiplier=Math.min(2.4,Math.max(.6,limit));
     var lab=byId(LAB_ID);
     lab.classList.remove('gg8-shock');
     void lab.offsetWidth;
@@ -255,7 +255,7 @@
           '<div class="gg8-site-picker"><select id="gg8SiteSelect" aria-label="Pilot site"></select><button id="gg8BestSite" type="button">BEST FIT</button></div>'+
           '<div class="gg8-stress">'+
             '<div class="gg8-stress-top"><div><span>PUSH CORE PROJECT LOAD</span><small id="gg8ProjectLabel">—</small></div><strong id="gg8LoadPct">100%</strong></div>'+
-            '<div class="gg8-slider-wrap"><input id="gg8Slider" class="gg8-slider" type="range" min="60" max="220" step="1" value="100"><div class="gg8-scale"><span>60%</span><span>100%</span><span>140%</span><span>180%</span><span>220%</span></div></div>'+
+            '<div class="gg8-slider-wrap"><input id="gg8Slider" class="gg8-slider" type="range" min="60" max="240" step="1" value="100"><div class="gg8-scale"><span>60%</span><span>100%</span><span>140%</span><span>180%</span><span>240%</span></div></div>'+
             '<div class="gg8-stress-actions"><button type="button" class="primary" id="gg8Break">PUSH TO BREAKPOINT</button><button type="button" id="gg8Reset">RESET CASE</button></div>'+
           '</div>'+
           '<div class="gg8-outcome"><div><span>DECISION</span><strong id="gg8Verdict">—</strong></div><div><span>DEFENSIBLE RANGE</span><strong id="gg8Score">—</strong></div><div><span>FIRST BOTTLENECK</span><strong id="gg8Bottleneck">—</strong></div><div><span>STRESS LENS</span><strong id="gg8ModeLabel2">LIVE</strong></div></div>'+
