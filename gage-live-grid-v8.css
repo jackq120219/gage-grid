@@ -473,3 +473,30 @@ body.gg-survey.gg-fieldbook{
   .gg8-wire-signal,.gg8-live-chip i,.gg8-core-ring.outer{animation:none!important}
   .gg8-flow-dot{display:none}
 }
+
+.gg8-lab[data-state="conditional"] .gg8-core-ring:not(.outer){
+  stroke:#b47b19!important;
+}
+.gg8-lab[data-state="conditional"] .gg8-core-value{
+  fill:#9a6c1c!important;
+}
+.gg8-lab[data-state="hold"] .gg8-core-ring:not(.outer){
+  stroke:var(--lab-orange)!important;
+  fill:#fff3ef!important;
+}
+.gg8-lab[data-state="hold"] .gg8-core-ring.outer{
+  stroke:var(--lab-orange)!important;
+}
+.gg8-lab[data-state="hold"] .gg8-core-value{
+  fill:var(--lab-orange)!important;
+}
+.gg8-lab[data-state="hold"] .gg8-control-head{
+  box-shadow:inset 6px 0 0 var(--lab-orange)!important;
+  background:#fff1ec!important;
+}
+.gg8-lab[data-state="hold"] .gg8-stress{
+  background:#fff9f6!important;
+}
+.gg8-lab[data-state="go"] .gg8-core-ring:not(.outer){
+  stroke:#3f795b!important;
+}
