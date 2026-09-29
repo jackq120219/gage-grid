@@ -3,9 +3,9 @@ const pilot=require('../data/pilot-sites-v2.json');
 const number=v=>{const raw=String(v??'').trim();if(!raw)return null;const cleaned=raw.replace(/[^0-9.-]/g,'');if(!cleaned||cleaned==='-'||cleaned==='.'||cleaned==='-.')return null;const n=Number(cleaned);return Number.isFinite(n)?n:null};
 module.exports=async function handler(req,res){
   res.setHeader('Cache-Control','s-maxage=1800, stale-while-revalidate=7200');
-  const id=String(req.query?.site||'').trim(),site=(pilot.sites||[]).find(s=>s.id===id);
+  const requestUrl=new URL(req.url,`https://${req.headers.host||'gage-grid.vercel.app'}`);\n  const id=String(requestUrl.searchParams.get('site')||'').trim(),site=(pilot.sites||[]).find(s=>s.id===id);
   if(!site)return res.status(400).json({ok:false,error:'Unknown pilot site'});
-  const radius=Math.min(20,Math.max(1,Number(req.query?.radius)||10));
+  const radius=Math.min(20,Math.max(1,Number(requestUrl.searchParams.get('radius'))||10));
   const qs=new URLSearchParams({output:'JSON',p_lat:String(site.lat),p_long:String(site.lng),p_radius:String(radius),responseset:'12',tablelist:'Y',summarylist:'Y'});
   const url=`https://echodata.epa.gov/echo/echo_rest_services.get_facilities?${qs}`;
   try{
