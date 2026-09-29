@@ -121,7 +121,7 @@
           '<div class="gg9-envelope-actions"><button type="button" class="primary" id="gg9UseCase">USE THIS CASE IN LIVE SCREEN</button><button type="button" id="gg9Evidence">OPEN EVIDENCE</button><button type="button" id="gg9Copy">COPY CASE SUMMARY</button></div>'+
         '</div>'+
       '</div>';
-    (byId('gg10Workflow')||metrics).insertAdjacentElement('afterend',section);
+    (byId('gg10Breaks')||byId('screen')||metrics).insertAdjacentElement('afterend',section);
 
     var select=byId('gg9EnvelopeSite');
     try{
@@ -302,7 +302,7 @@
     section.innerHTML=
       '<div class="gg10-info-head"><div><div class="kicker">HOW GAGE SCREENS A SITE</div><h2>Five moves from project load to diligence order.</h2><p>Use this as the map for the rest of the page. Click any stage to see what Gage is doing, then open the section that performs that job.</p></div><div class="gg10-info-badge"><span>READING TIME</span><strong>About 30 seconds</strong></div></div>'+
       '<div class="gg10-workflow-body"><div id="gg10WorkflowTrack" class="gg10-workflow-track"></div><aside class="gg10-workflow-output"><span id="gg10WorkflowLabel">STAGE 01</span><h3 id="gg10WorkflowTitle">Define the project load.</h3><p id="gg10WorkflowCopy">Start with the infrastructure the project actually requires.</p><div id="gg10WorkflowOutput" class="gg10-output-list"></div><button type="button" id="gg10WorkflowAction" class="gg10-workflow-action">OPEN THIS STAGE →</button></aside></div>';
-    metrics.insertAdjacentElement('afterend',section);
+    (q('.hero')||metrics).insertAdjacentElement('afterend',section);
 
     var stages=[
       {title:'Define project load',copy:'Enter peak power, water, wastewater, gas, fiber, redundancy, timing and growth.',icon:'load',target:'screen'},
@@ -325,6 +325,7 @@
       var target=stages[workflowStage]&&stages[workflowStage].target;
       var el=byId(target);
       if(!el&&target==='decision-gate')el=q('.ggx-gate');
+      if(el&&el.closest&&el.closest('#gg11DeepDive'))byId('gg11DeepDive').open=true;
       el?.scrollIntoView({behavior:'smooth',block:'start'});
     });
     section._ggStages=stages;
@@ -414,14 +415,14 @@
 
   function installEvidenceInfographic(){
     if(byId('gg10Evidence'))return;
-    var registry=byId('registry');if(!registry)return;
+    var deep=byId('gg11DeepDive'),method=byId('method');if(!deep||!method)return;
     var section=document.createElement('section');
     section.id='gg10Evidence';
     section.className='gg10-infographic';
     section.innerHTML=
       '<div class="gg10-info-head"><div><div class="kicker">FROM SIGNAL TO PROOF</div><h2>Gage separates what is known from what still needs a signature.</h2><p>The pilot deliberately keeps public context, modeled capacity and utility confirmation in different buckets. Click a rung to see what it means and where to inspect it.</p></div><div class="gg10-info-badge"><span>PROOF STANDARD</span><strong>Unknown stays unknown</strong></div></div>'+
       '<div class="gg10-evidence-body"><div id="gg10Ladder" class="gg10-ladder"></div><aside class="gg10-evidence-aside"><span id="gg10EvidenceLabel">STAGE 01</span><h3 id="gg10EvidenceTitle">Public signal.</h3><p id="gg10EvidenceCopy">—</p><div id="gg10EvidenceFacts" class="gg10-evidence-facts"></div><button type="button" id="gg10EvidenceLink" class="gg10-evidence-link">OPEN RELATED SECTION →</button></aside></div>';
-    registry.insertAdjacentElement('beforebegin',section);
+    method.insertAdjacentElement('beforebegin',section);
 
     var steps=[
       {title:'Public signal',icon:'signal',state:'CONTEXT ONLY',copy:'Public records and observed context can show what exists nearby or what changed. They do not prove parcel serviceability.',target:'registry'},
@@ -443,6 +444,7 @@
       var step=steps[evidenceStage]||steps[0];
       var target=byId(step.target);
       if(!target&&step.target==='decision-gate')target=q('.ggx-gate');
+      if(target&&target.closest&&target.closest('#gg11DeepDive'))byId('gg11DeepDive').open=true;
       target?.scrollIntoView({behavior:'smooth',block:'start'});
     });
     section._ggEvidenceSteps=steps;
@@ -502,6 +504,21 @@
     });
   }
 
+
+  function bindDeepDiveNavigation(){
+    var deep=byId('gg11DeepDive');if(!deep)return;
+    qa('.top nav a').forEach(function(link){
+      link.addEventListener('click',function(){
+        var href=link.getAttribute('href')||'';
+        if(href==='#changes'||href==='#method')deep.open=true;
+      });
+    });
+    deep.addEventListener('toggle',function(){
+      var label=q('summary em',deep);
+      if(label)label.textContent=deep.open?'CLOSE':'OPEN';
+    });
+  }
+
   function draftPersistence(){
     var ids=['projectType','siteSelect','powerReq','waterReq','wasteReq','gasReq','fiberReq','timeline','powerRedundancy','risk','growth','capitalExposure'];
     try{
@@ -524,10 +541,11 @@
     document.body.classList.add('gg-clean-runtime');
     heroSheet();
     installWorkflowInfographic();
-    installEnvelope();
     installBreakInfographic();
+    installEnvelope();
     installEvidenceInfographic();
     bindCoreSync();
+    bindDeepDiveNavigation();
     draftPersistence();
     renderHero();
     renderEnvelope();
