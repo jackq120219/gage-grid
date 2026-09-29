@@ -167,7 +167,9 @@
     byId('gg8Verdict').textContent=a.verdict;
     byId('gg8Score').textContent=a.low+'–'+a.high;
     byId('gg8Bottleneck').textContent=a.worst.name+' · '+Math.round(a.worst.ratio*100)+'%';
-    byId('gg8ModeLabel').textContent=stressName();\n    byId('gg8ModeLabel2').textContent=stressName();\n    var lab=byId(LAB_ID);if(lab)lab.setAttribute('data-state',a.vclass);
+    byId('gg8ModeLabel').textContent=stressName();
+    byId('gg8ModeLabel2').textContent=stressName();
+    var lab=byId(LAB_ID);if(lab)lab.setAttribute('data-state',a.vclass);
     byId('gg8ProjectLabel').textContent=projectLabel(req);
 
     renderSvg(a,req,site);
