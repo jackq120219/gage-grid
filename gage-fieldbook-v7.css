@@ -352,3 +352,43 @@ body.gg-survey.gg-fieldbook .gg-sr-grid article>span{
   body.gg-v7 .section.ggv7-reveal{opacity:1!important;transform:none!important;transition:none!important}
   body.gg-v7 .section>.head:before{animation:none!important}
 }
+
+body.gg-survey.gg-fieldbook .ggx-morph-row{cursor:pointer!important}
+body.gg-survey.gg-fieldbook .ggx-morph-row:focus-visible,
+body.gg-survey.gg-fieldbook .ggf7-rail:focus-visible{
+  outline:2px solid var(--v7-orange)!important;
+  outline-offset:2px!important;
+}
+body.gg-survey.gg-fieldbook .ggxb-row.ggv7-selected{
+  border-color:var(--v7-orange)!important;
+  box-shadow:inset 4px 0 0 var(--v7-orange)!important;
+}
+body.gg-survey.gg-fieldbook .ggv7-budget-focus{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;
+  margin:0 10px 10px;padding:13px 14px;
+  border:1px solid #9eabb2;background:#edf3f7;
+}
+body.gg-survey.gg-fieldbook .ggv7-budget-focus span{
+  display:block;color:var(--v7-orange);
+  font:800 7px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.11em;
+}
+body.gg-survey.gg-fieldbook .ggv7-budget-focus strong{
+  display:block;margin-top:6px;color:#20313b;font-size:11px;
+}
+body.gg-survey.gg-fieldbook .ggv7-budget-focus p{
+  margin:5px 0 0;color:#5f6f78;font-size:8px;line-height:1.5;
+}
+body.gg-survey.gg-fieldbook .ggv7-budget-focus button{
+  min-height:35px;padding:0 10px;border:1px solid var(--v7-ink);
+  background:#fff;color:#293944;
+  font:800 7px ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.05em;cursor:pointer;
+}
+body.gg-survey.gg-fieldbook .ggv7-budget-focus button:hover{
+  background:#e7eff7;color:var(--v7-blue);
+}
+@media(max-width:620px){
+  body.gg-survey.gg-fieldbook .ggv7-budget-focus{grid-template-columns:1fr}
+  body.gg-survey.gg-fieldbook .ggv7-budget-focus button{width:100%}
+}
